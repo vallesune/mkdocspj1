@@ -5,7 +5,7 @@ title: "Sprint 1.Inst. i Config inicial"
 
 ## 1. SO ubuntu (virtualitzacio i instalacio)
 
-
+holahola
 
 ## 2. Llicenciament
 
