@@ -7,6 +7,8 @@ title: "Sprint 1.Inst. i Config inicial"
 
 holahola
 
+![text](captures/captura31.png)
+
 ## 2. Llicenciament
 
 
