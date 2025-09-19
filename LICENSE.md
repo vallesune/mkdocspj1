@@ -3,25 +3,23 @@
 Treball llicenciat sobre la llicencia [Licencia Creative Commons Attribution 4.0 International (https://creativecommons.org/licenses/by/4.0/)]
 ---
 
-## Resumen
+## Resum
 
-Esta licencia permite que otros compartan, copien y distribuyan tu trabajo, así como adaptarlo o transformarlo, siempre que:  
+Aquesta llicència permet que altres comparteixin, copiïn i distribueixin el teu treball, així com adaptar-lo o transformar-lo, sempre que:
 
-- Reconozcan la autoría original.  
-- No utilicen el trabajo con fines comerciales.  
-- Distribuyan las obras derivadas bajo la misma licencia.  
+- Reconeguin l'autoria original
 
 ---
 
-## Texto legal completo
+## Text legal complet
 
-Puedes consultar el texto completo de la licencia aquí:  
+Pots consultar el text complet de la llicencia aquí:  
 https://creativecommons.org/licenses/by/4.0/
 ---
 
-## Atribución y condiciones
+## Atribució y condicions
 
-Se debe dar crédito adecuado, proporcionar un enlace a esta licencia e indicar si se han realizado cambios. Cualquier obra derivada debe distribuirse con la misma licencia y no se pueden imponer restricciones adicionales.
+Cal donar crèdit adequat, proporcionar un enllaç a aquesta llicència i indicar si s'han fet canvis.
 
 ---
 
