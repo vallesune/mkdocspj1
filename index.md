@@ -5,7 +5,7 @@ title: "MP01 Valle Suñe"
 
 ## Llicencia
 
-El contenido está bajo licencia [Creative Commons BY-NC-SA 3.0 ES](LICENSE.md).
+El contingut está baix llicencia [Creative Commons BY 4.0 ES](LICENSE.md).
 
 ## Contingut del curs
 
