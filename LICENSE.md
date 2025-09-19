@@ -1,7 +1,6 @@
 # Licencia Creative Commons Reconocimiento - No Comercial - Compartir Igual 3.0 España (CC BY-NC-SA 3.0)
 
-Este trabajo está licenciado bajo la [Licencia Creative Commons Reconocimiento - No Comercial - Compartir Igual 3.0 España (CC BY-NC-SA 3.0)](https://creativecommons.org/licenses/by-nc-sa/3.0/es/).
-
+Treball llicenciat sobre la llicencia [Licencia Creative Commons Attribution 4.0 International (https://creativecommons.org/licenses/by/4.0/)]
 ---
 
 ## Resumen
@@ -17,8 +16,7 @@ Esta licencia permite que otros compartan, copien y distribuyan tu trabajo, así
 ## Texto legal completo
 
 Puedes consultar el texto completo de la licencia aquí:  
-https://creativecommons.org/licenses/by-nc-sa/3.0/es/legalcode
-
+https://creativecommons.org/licenses/by/4.0/
 ---
 
 ## Atribución y condiciones
@@ -27,4 +25,4 @@ Se debe dar crédito adecuado, proporcionar un enlace a esta licencia e indicar 
 
 ---
 
-© 2025 Mireia Consarnau
+Projecte1 © 2025 by Valle Suñe is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">
