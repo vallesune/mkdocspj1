@@ -1,5 +1,4 @@
 ---
-layout: minima
 title: "MP01 Valle Suñe"
 ---
 
