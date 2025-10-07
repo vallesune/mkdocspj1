@@ -43,59 +43,93 @@ podem comprovar que accedim
 ## 3. Gestors d'arrencada duals
 ara suposem que volem instalar windows a l’espai de disc lliure
 des de la configuracio d’emagatzematge de virtualbox afegim la iso 
+
 <img width="275" height="232" alt="captura1" src="https://github.com/user-attachments/assets/4ec7a7d4-cda2-4886-af0c-6b4056be3841" />
 
+
 activem la efi per SO especials si no estava activa
+
 <img width="883" height="582" alt="captura26" src="https://github.com/user-attachments/assets/ed7e476f-224b-4065-a21a-942e30bffac1" />
 
+
 al iniciar amb F12 selecionem iniciar per dvd i podem instalar windows 
+
 <img width="1027" height="749" alt="captura2" src="https://github.com/user-attachments/assets/56a489e8-07a1-4e5e-9b32-a2392550215f" />
 
+
 triem la opcio personalitzada per poder utilitzar les particions
+
 i triem la particio lliure
+
 <img width="1027" height="749" alt="captura3" src="https://github.com/user-attachments/assets/e21e1ae4-afe2-48e5-a026-2c60218effac" />
 <img width="1026" height="728" alt="captura5" src="https://github.com/user-attachments/assets/44b13e12-3d2e-4765-99a6-c4050fb2c7ca" />
 
+
 es comença a instalar
+
 <img width="1026" height="728" alt="captura6" src="https://github.com/user-attachments/assets/e9801cee-9911-408b-a6dd-16f622f3f07f" />
 
+
 instalat correcte
+
 <img width="1026" height="728" alt="captura7" src="https://github.com/user-attachments/assets/4eb54738-3b81-4d43-8f41-a91ecab5bb9a" />
 
 
-una vegada instalat ja no podem accedir a ubuntu, tot i que segueix existint, i per recuperarlo i poder usar els dos SO utilitzarem supergrub2
+
+una vegada instalat ja no podem accedir a ubuntu, tot i que segueix existint, ja que al haber instalat windows despres d’ubuntu, s’ha sobreescrit el grub per el MBR de windows i per recuperarlo i poder usar els dos SO utilitzarem la iso de supergrub2
 
 des de la configuracio de la vm em eliminat la iso de windows i ara afegim la del supergrub
+
 <img width="277" height="252" alt="captura8" src="https://github.com/user-attachments/assets/4816934e-3879-45e3-a54a-ec13d6cfbca3" />
 
+
 entrem dins windows i anem a configuracio, recuperacio, i reiniciem desde inici avançat
+
 <img width="1025" height="598" alt="captura10" src="https://github.com/user-attachments/assets/7b717179-451f-4d8f-99e2-9a0622340858" />
 
+
 selecionem el disc-dvd que correspon al supergrub i este s’inicia
+
 <img width="1025" height="598" alt="captura9" src="https://github.com/user-attachments/assets/f047eb1d-a0cf-4c20-a193-0d792776f24b" />
 
+
 triem la opcio “detecta boot method”
+
 <img width="645" height="412" alt="captura11" src="https://github.com/user-attachments/assets/8f4312f8-35c6-4682-9927-4092d9d50520" />
 
+
 en el nostre cas triem ubuntu
+
 <img width="645" height="412" alt="captura12" src="https://github.com/user-attachments/assets/c7cd236a-8857-400f-a12a-621831a8abf2" />
 
+
 tornarem a entrar a ubuntu i obrirem una terminal
+
 <img width="882" height="379" alt="captura13" src="https://github.com/user-attachments/assets/45af3518-a605-4949-9cdc-4d0338e3f264" />
 
+
 grub-install /dev/sda
+
 <img width="882" height="379" alt="captura15" src="https://github.com/user-attachments/assets/9cf288c8-a34e-44f0-a180-fda2ae644f21" />
 
+
 modifiquem el fitxer /etc/default/grub i comentem les linies de TIMEOUT
+
 <img width="990" height="626" alt="captura22" src="https://github.com/user-attachments/assets/11926344-7285-4694-a6a3-5bc9447778f1" />
 
+
 i al final afegim ‘GRUB_DISABLE_OS_PROBER=false’
+
 <img width="990" height="626" alt="captura21" src="https://github.com/user-attachments/assets/490bea63-f7a8-48e9-9e88-7a5b1f8bdb7e" />
 
+
 guardem i actualitzem el grub en ‘update-grub2’
+
 <img width="990" height="626" alt="captura23" src="https://github.com/user-attachments/assets/a59e1f15-671f-4bf6-9713-6fad48d840c1" />
 
+
 ja podem accedir!
+
 <img width="990" height="626" alt="captura24" src="https://github.com/user-attachments/assets/6d6e7dbc-2320-41af-b38b-a467cd2b0753" />
 
 
