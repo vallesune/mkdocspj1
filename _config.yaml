@@ -1,10 +1,10 @@
-theme: minima
+remote-theme: cotes2020/chirpy-static-assets
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
 
 sass:
   style: compressed
-
-plugins:
-  - jekyll-seo-tag
 
 include:
   - assets/css/custom.css
