@@ -135,10 +135,72 @@ ja podem accedir!
 
 
 ## 4. punts de restauracio
+Per fer proves de restauracio de discos utilitzarem l'eina grafica timeshift
+Primer afegim a la maquina virtual un disc extra per proves
 
+<img width="574" height="332" alt="image" src="https://github.com/user-attachments/assets/a7818c5a-b646-4c6d-8532-1ffbed64b352" />
+
+
+Dins de la maquina comprovem que esta amb "fdisk -l" i es el disc sdb
+
+<img width="741" height="516" alt="captura3" src="https://github.com/user-attachments/assets/6cf5a553-de0f-4217-ad6e-286a83af0c92" />
+
+
+El formatejem per que tot el disc ocupi una sola particio de tipus ext4
+
+<img width="875" height="517" alt="captura5" src="https://github.com/user-attachments/assets/fe83ddb7-e22b-478c-aeaf-1e9ff8863767" />
+
+<img width="870" height="530" alt="captura6" src="https://github.com/user-attachments/assets/2c089b3c-d97a-4f66-b8ac-b7592a26992c" />
+
+Podem instalar timeshift per terminal amb apt "sudo apt install timeshift"
+
+<img width="1343" height="576" alt="captura2" src="https://github.com/user-attachments/assets/7efdc5e8-f307-4202-a746-569666440759" />
+
+Obrim el programa i seleccionem tipus rsync 
+
+<img width="622" height="671" alt="captura9" src="https://github.com/user-attachments/assets/c9f6f211-06b1-429c-bdc1-8c198dd6b819" />
+
+
+Triem la particio creada del disc afegit
+
+<img width="622" height="671" alt="captura11" src="https://github.com/user-attachments/assets/e831c7d0-6b81-43fc-9648-2cce9747ef1d" />
+
+
+Per fer proves mes rapidament seleccionem que faigui copies de seguretat al arrencar la maquina
+
+<img width="622" height="671" alt="captura13" src="https://github.com/user-attachments/assets/00aeb1a6-d7d1-4aaa-ba42-85ae4fa5fb4a" />
+
+
+Nomes farem copies dels continguts del usuari
+
+<img width="797" height="671" alt="captura14" src="https://github.com/user-attachments/assets/6c419894-0285-466a-87de-e1b221e66b53" />
+
+
+Es comença a creea
+
+<img width="797" height="671" alt="captura15" src="https://github.com/user-attachments/assets/34cb5036-de76-4d83-a1a0-e7f6b9489c6a" />
+
+
+Un cop acabada la copia podem eliminar alguns archius del usuari per provar de restaurarlos
+
+<img width="1018" height="729" alt="captura17" src="https://github.com/user-attachments/assets/14d53db6-a899-44a0-a164-b30d26dfb139" />
+
+
+Restaurem la copia
+
+<img width="1018" height="729" alt="captura18" src="https://github.com/user-attachments/assets/e7c12f57-403c-4180-b756-e86f744fe53d" />
+
+<img width="1187" height="849" alt="captura20" src="https://github.com/user-attachments/assets/85adbf18-00f0-4cab-915c-01fada935a1f" />
+
+
+I comprovem que hem recuperat els fitxers
+
+<img width="1187" height="849" alt="captura21" src="https://github.com/user-attachments/assets/a6bb61af-9a87-4f5a-af7d-987bcb92b9b3" />
 
 
 ## 5. Config xarxa
+
+
 
 
 
