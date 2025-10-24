@@ -40,6 +40,8 @@ podem comprovar que accedim
 
 
 
+
+
 ## 3. Gestors d'arrencada duals
 ara suposem que volem instalar windows a l’espai de disc lliure
 des de la configuracio d’emagatzematge de virtualbox afegim la iso 
@@ -199,8 +201,34 @@ I comprovem que hem recuperat els fitxers
 
 
 ## 5. Config xarxa
+Podem comprovar les nostres xarxes i ips amb ip a
+
+<img width="724" height="483" alt="captura24" src="https://github.com/user-attachments/assets/d59c4b87-9d27-43e1-971e-0419d629be37" />
 
 
+Podem modificar els parametres de xarxa al fitxer .yaml que es troba a /etc/netplan/
+
+
+Per defecte ve indicat unicament el renderer que ens permet tenir interficie grafica, el NetworkManager, si volem un renderer sense interficie podem utilitzar networkd
+
+<img width="735" height="483" alt="captura26" src="https://github.com/user-attachments/assets/1a3f6f97-8c88-489b-9849-9ff939186a8f" />
+
+Podem modificar i afegir la configuracio directament a l'archiu
+
+
+Exemple de configuracio ethernet sense dchp, fixa
+
+Indiquem parametres com l'adreça amb la mascara, la porta d'enllaç, i algun dns
+
+<img width="735" height="483" alt="captura28" src="https://github.com/user-attachments/assets/c50d5a18-8ad2-49c3-8d86-f510f73629fb" />
+
+Per aplicar les configuracions fetes al fitxer el guardem, tornem a terminal i utilitzem la comanda 'netplan apply'
+
+<img width="735" height="483" alt="captura29" src="https://github.com/user-attachments/assets/2a22b823-0f11-42ae-8686-13444aa28d66" />
+
+comprovem en un 'ip a'
+
+<img width="724" height="483" alt="captura23" src="https://github.com/user-attachments/assets/d5472f2c-91db-4385-9c11-d5e90caca184" />
 
 
 
