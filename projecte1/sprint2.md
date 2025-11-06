@@ -42,13 +42,13 @@ permalink: projecte1/sprint2/
     
 		 Assignar sistemes de fitxers diferents.
     
-	     Comprovar l’estat dels blocs i sectors.
+		 Comprovar l’estat dels blocs i sectors.
 
   Particions i volums
 
 		 Partició: fragment físic d’un disc.
 
-	     Volum: agrupació lògica de particions o discos, que permet unificar espai de diversos discos sota una sola unitat virtual.
+		 Volum: agrupació lògica de particions o discos, que permet unificar espai de diversos discos sota una sola unitat virtual.
 
 
 
