@@ -19,18 +19,18 @@ a:hover{text-decoration:underline}
 
 
 /* contenedor centrado para contenido Markdown */
-.container{
+/*.container{
 max-width:var(--max-width);
 margin:36px auto;
 padding:0 20px;
 line-height:1.6;
-}
+}*/
 
 
 /* Títulos dentro del contenido Markdown */
-.container h1 {
+/*.container h1 {
   font-size: 2.2rem;
-  color: #0b79d0; /* azul del tema */
+  color: #0b79d0; 
   margin-top: 2rem;
   margin-bottom: 1rem;
   text-transform: uppercase;
@@ -39,7 +39,7 @@ line-height:1.6;
 
 .container h2 {
   font-size: 1.6rem;
-  color: #1e293b; /* gris oscuro */
+  color: #1e293b; 
   margin-top: 1.8rem;
   margin-bottom: 0.8rem;
   border-bottom: 2px solid #e2e8f0;
@@ -54,13 +54,30 @@ line-height:1.6;
   margin-bottom: 0.5rem;
 }
 
-/* Texto normal */
+
 .container p {
   font-size: 1rem;
   color: #444;
   margin-bottom: 1rem;
   line-height: 1.7;
+}*/
+
+.container {
+  text-align: left; /* el texto normal a la izquierda */
+  margin: 36px auto;
+  max-width: var(--max-width);
+  padding: 0 20px;
 }
+
+/* títulos centrados */
+.container h1,
+.container h2,
+.container h3 {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 
 /* encabezados centrados y con buen espaciado */
