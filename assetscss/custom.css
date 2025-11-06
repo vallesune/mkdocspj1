@@ -19,12 +19,48 @@ a:hover{text-decoration:underline}
 
 
 /* contenedor centrado para contenido Markdown */
-.container{
+/*.container{
 max-width:var(--max-width);
 margin:36px auto;
 padding:0 20px;
 line-height:1.6;
-text-align: left; /* <-- texto centrado dentro del contenido */
+text-align: left; 
+}
+*/
+
+/* Títulos dentro del contenido Markdown */
+.container h1 {
+  font-size: 2.2rem;
+  color: #0b79d0; /* azul del tema */
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.container h2 {
+  font-size: 1.6rem;
+  color: #1e293b; /* gris oscuro */
+  margin-top: 1.8rem;
+  margin-bottom: 0.8rem;
+  border-bottom: 2px solid #e2e8f0;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.container h3 {
+  font-size: 1.3rem;
+  color: #334155;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Texto normal */
+.container p {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 1rem;
+  line-height: 1.7;
 }
 
 
