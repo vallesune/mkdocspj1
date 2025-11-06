@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Sprint 1.Inst. i Config inicial"
+permalink: projecte1/
 ---
 
 ## 1. SO ubuntu (virtualitzacio i instalacio)
