@@ -1,54 +1,80 @@
-/* Suaviza las líneas horizontales */
-hr {
-  border: none;
-  border-top: 1px solid #ccc;
-  margin: 20px 0;
-}
-
-/* Títulos */
-h1, h2, h3 {
-  margin-top: 20px;
-  margin-bottom: 10px;
-  color: #2c3e50;
-}
-
-/* Enlaces */
-a {
-  color: #1a73e8;
-  text-decoration: none;
-  margin-bottom: 5px;
-  display: inline-block;
-  font-size: 1.05em;
-}
-a:hover {
-  text-decoration: underline;
-}
-
-/* Pie de página */
-footer, .license {
-  font-size: 0.85em;
-  color: #666;
-  margin-top: 20px;
-  border-top: 1px solid #eee;
-  padding-top: 10px;
-  text-align: left;
-}
-
-/* Contenido */
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.3;
-  padding: 0 15px;
-}
-
-li {
-  line-height: 1.2;
+/* assets/css/site.css */
+:root{
+--bg: #ffffff;
+--text: #222222;
+--muted: #666666;
+--accent: #0b79d0;
+--nav-bg: #f7f9fb;
+--max-width: 820px;
 }
 
 
-/* Responsividad básica */
-@media (max-width: 600px) {
-  body {
-    padding: 0 10px;
-  }
+/* reset muy ligero */
+html,body{margin:0;padding:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:var(--bg); color:var(--text);}
+img{max-width:100%;height:auto}
+
+
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+
+/* contenedor centrado para contenido Markdown */
+.container{
+max-width:var(--max-width);
+margin:36px auto;
+padding:0 20px;
+line-height:1.6;
+text-align:center; /* <-- texto centrado dentro del contenido */
 }
+
+
+/* encabezados centrados y con buen espaciado */
+.container h1, .container h2, .container h3{margin:1.2rem 0}
+
+
+/* navegación simple */
+.navbar{
+background:var(--nav-bg);
+border-bottom:1px solid #e6edf3;
+display:flex;
+align-items:center;
+justify-content:center; /* centra el bloque de links */
+padding:10px 16px;
+}
+.navbar .nav-list{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+list-style:none;
+margin:0;
+padding:0;
+}
+.navbar a{
+display:inline-block;
+padding:8px 12px;
+border-radius:8px;
+color:var(--text);
+font-weight:600;
+transition:background .12s, color .12s, transform .08s;
+}
+.navbar a:hover{background:#eaf4ff; transform:translateY(-1px)}
+.navbar a.active{background:var(--accent); color:#fff}
+
+
+/* menú responsivo: en pantallas pequeñas las entradas se ajustan */
+@media (max-width:520px){
+.container{padding:0 14px}
+.navbar .nav-list{gap:8px}
+.navbar a{padding:6px 10px;font-size:0.95rem}
+}
+
+
+/* tarjetas y bloques de ejemplo */
+.card{
+background:#ffffff;
+border:1px solid #eef3f7;
+border-radius:12px;
+padding:18px;
+box-shadow: 0 4px 14px rgba(20,30,40,0.03);
+margin:18px 0;
+.site-footer{color:var(--muted);font-size:0.9rem;text-align:center;padding:28px 12px}
