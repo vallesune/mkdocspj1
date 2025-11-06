@@ -24,7 +24,7 @@ max-width:var(--max-width);
 margin:36px auto;
 padding:0 20px;
 line-height:1.6;
-text-align:center; /* <-- texto centrado dentro del contenido */
+text-align: left; /* <-- texto centrado dentro del contenido */
 }
 
 
