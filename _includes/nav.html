@@ -1,7 +1,7 @@
 <!-- _includes/nav.html -->
 <nav class="navbar">
   <ul class="nav-list">
-    {% for item in data.navigation %}
+    {% for item in site.data.navigation %}
     <li><a href="{{ item.url | relative_url }}" class="{% if page.url == item.url %}active{% endif %}">{{ item.title }}</a></li>
     {% endfor %}
   </ul>
