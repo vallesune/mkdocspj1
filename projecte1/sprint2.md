@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Sprint 2. Instal·lació, Configuració de Programari de Base i Gestió de Fitxers"
+permalink: projecte1/sprint2/
 ---
 
 ## 1. Sistemes de fitxers i particions
