@@ -5,14 +5,14 @@ title: "Sprint 2. Instal·lació, Configuració de Programari de Base i Gestió 
 ## 1. Sistemes de fitxers i particions
 
   Mida de sector
-    
-    Unitat mínima física del disc per guardar dades.
-    
-    Normalment: 512 bytes.
+	    
+		Unitat mínima física del disc per guardar dades.
+	    
+		Normalment: 512 bytes.
 
   Mida de bloc
-  
-    Unitat mínima lògica que utilitza el sistema operatiu per gestionar les dades.
+	
+	  Unitat mínima lògica que utilitza el sistema operatiu per gestionar les dades.
     
     Per defecte: 4 KB (4096 bytes), però es pot modificar durant la formatació.
     
