@@ -1,0 +1,10 @@
+<!-- _includes/nav.html -->
+<nav class="navbar">
+  <ul class="nav-list">
+    <!-- Ejemplo estático: sustituye o convierte en loop si prefieres datos dinámicos -->
+    <li><a href="{{ '/' | relative_url }}" class="{% if page.url == '/' %}active{% endif %}">Inicio</a></li>
+    <li><a href="{{ '/guia/' | relative_url }}" class="{% if page.url contains '/guia' %}active{% endif %}">Guía</a></li>
+    <li><a href="{{ '/practicas/' | relative_url }}" class="{% if page.url contains '/practicas' %}active{% endif %}">Prácticas</a></li>
+    <li><a href="{{ '/referencia/' | relative_url }}" class="{% if page.url contains '/referencia' %}active{% endif %}">Referencia</a></li>
+  </ul>
+</nav>
