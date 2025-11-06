@@ -19,14 +19,13 @@ a:hover{text-decoration:underline}
 
 
 /* contenedor centrado para contenido Markdown */
-/*.container{
+.container{
 max-width:var(--max-width);
 margin:36px auto;
 padding:0 20px;
 line-height:1.6;
-text-align: left; 
 }
-*/
+
 
 /* Títulos dentro del contenido Markdown */
 .container h1 {
