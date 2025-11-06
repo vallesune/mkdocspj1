@@ -1,4 +1,5 @@
 ---
+layout: default
 title: "Sprint 1.Inst. i Config inicial"
 ---
 
