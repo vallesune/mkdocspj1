@@ -74,6 +74,11 @@ intro
 
 ## 2. Gestio d'usuaris, grups i permisos
 
+Un usuari dins d'un equip es una entitat que representa normalment a una unica persona i que s'idenitfica per un nom i uid.
+
+Un grup es un conjunt d'usuaris agrupats per que comparteixen permisos.
+
+
 La gestió d'usuaris i grups a Linux es basa principalment en quatre fitxers del sistema, ubicats a /etc, que emmagatzemen la informació essencial per identificar usuaris, assignar-los a grups i controlar l'accés al sistema.
 
 	/etc/passwd
@@ -88,3 +93,8 @@ La gestió d'usuaris i grups a Linux es basa principalment en quatre fitxers del
 	/etc/gshadow
 		Conté les contrasenyes dels grups (si n'hi ha), així com els administradors i els membres amb permisos especials dins d'aquests grups.
 
+
+Per modificar el contingut d'aquests fitxers, o per modificar algun parametre d'usuaris, grups, contrasenyes, no hem de modificar directament el contingut dels fitxers, sino utilitzar comandes, ja que podem provocar errors de sintaxi o corrupcio.
+
+Algunes comandes basiques per crear o modificar usaris son:
+		adduser
