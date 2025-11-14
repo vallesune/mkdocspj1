@@ -48,6 +48,11 @@ intro
     
 		 Externa (física): fitxers separats en diferents blocs del disc, reduint el rendiment.
 
+		 Podem comprovar si la nostra particio de dades necessita desframentacio amb la comanda e4defrag
+
+<img width="654" height="317" alt="image" src="https://github.com/user-attachments/assets/3bc8211a-b935-4d01-abcb-efbabc67fa40" />
+
+
   Tipus de formatació
     
 		 Formatació d’alt nivell: crea o reinicia el sistema de fitxers però manté el contingut.
@@ -66,10 +71,20 @@ intro
     
 		 Comprovar l’estat dels blocs i sectors.
 
-		 
-
-
 
 ## 2. Gestio d'usuaris, grups i permisos
 
-kkkkkk
+La gestió d'usuaris i grups a Linux es basa principalment en quatre fitxers del sistema, ubicats a /etc, que emmagatzemen la informació essencial per identificar usuaris, assignar-los a grups i controlar l'accés al sistema.
+
+/etc/passwd
+Conté la informació bàsica de cada usuari: nom dusuari, UID, GID principal, directori home i shell. Les contrasenyes ja no es guarden aquí per seguretat.
+
+/etc/shadow
+Deseu les contrasenyes xifrades dels usuaris, juntament amb paràmetres com la caducitat, el temps mínim entre canvis i polítiques de seguretat de la contrasenya.
+
+/etc/group
+Emmagatzema els grups del sistema, assignant un GID a cadascun i llistant els usuaris que pertanyen a grups secundaris.
+
+/etc/gshadow
+Conté les contrasenyes dels grups (si n'hi ha), així com els administradors i els membres amb permisos especials dins d'aquests grups.
+
