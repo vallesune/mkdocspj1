@@ -76,15 +76,15 @@ intro
 
 La gestió d'usuaris i grups a Linux es basa principalment en quatre fitxers del sistema, ubicats a /etc, que emmagatzemen la informació essencial per identificar usuaris, assignar-los a grups i controlar l'accés al sistema.
 
-/etc/passwd
-Conté la informació bàsica de cada usuari: nom dusuari, UID, GID principal, directori home i shell. Les contrasenyes ja no es guarden aquí per seguretat.
+	/etc/passwd
+		Conté la informació bàsica de cada usuari: nom dusuari, UID, GID principal, directori home i shell. 		Les contrasenyes ja no es guarden aquí per seguretat.
 
-/etc/shadow
-Deseu les contrasenyes xifrades dels usuaris, juntament amb paràmetres com la caducitat, el temps mínim entre canvis i polítiques de seguretat de la contrasenya.
+	/etc/shadow
+		Deseu les contrasenyes xifrades dels usuaris, juntament amb paràmetres com la caducitat, el temps mínim entre canvis i polítiques de seguretat de la contrasenya.
 
-/etc/group
-Emmagatzema els grups del sistema, assignant un GID a cadascun i llistant els usuaris que pertanyen a grups secundaris.
+	/etc/group
+		Emmagatzema els grups del sistema, assignant un GID a cadascun i llistant els usuaris que pertanyen a grups secundaris.
 
-/etc/gshadow
-Conté les contrasenyes dels grups (si n'hi ha), així com els administradors i els membres amb permisos especials dins d'aquests grups.
+	/etc/gshadow
+		Conté les contrasenyes dels grups (si n'hi ha), així com els administradors i els membres amb permisos especials dins d'aquests grups.
 
