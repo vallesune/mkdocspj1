@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Sprint 1.Inst. i Config inicial"
-permalink: projecte1/sprint1/
+title: "Sprint 3.jjjj"
+permalink: projecte1/sprint3/
 ---
 
 ## 1. titol
