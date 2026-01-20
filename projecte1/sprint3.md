@@ -171,3 +171,12 @@ Per ultim podem reiniciar la maquina client i al moment d'inciar sessio triar "n
 
 <img width="588" height="133" alt="Captura de pantalla de 2026-01-13 13-49-31" src="https://github.com/user-attachments/assets/ae94cb14-7786-4b4f-9000-133466991efe" />
 
+
+### Configuracio i us d'entorn grafic
+
+#### Apache Directory Studio
+
+Desde la pagina oficial ens descargem el .tar
+
+
+
