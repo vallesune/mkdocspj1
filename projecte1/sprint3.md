@@ -106,10 +106,14 @@ Al igual que la maquina servidor, volem que la maquina client estigui en xarxa n
 
 
 Comprovem que la conexio es correcta entre maquines amb un ping al server
-(foto)
+
+<img width="739" height="267" alt="image" src="https://github.com/user-attachments/assets/1aa4493c-165d-438e-803f-bfd2e66ad9de" />
+
 
 Instalem els paquets libnss-ldap, libpam-ldap i nscd
-(foto)
+
+<img width="734" height="176" alt="image" src="https://github.com/user-attachments/assets/cb6c6c26-af56-4f91-aa98-2a438792723d" />
+
 
 S'obrira l'instalador i indiquem la ip del server
 
@@ -178,5 +182,102 @@ Per ultim podem reiniciar la maquina client i al moment d'inciar sessio triar "n
 
 Desde la pagina oficial ens descargem el .tar
 
+<img width="1113" height="572" alt="Captura de pantalla de 2026-01-20 12-41-36" src="https://github.com/user-attachments/assets/7fa8cc19-2560-41ee-90b3-a2f922cf3496" />
+
+Desde terminal accedim on tenim el .tar i el descomprimim
+
+<img width="737" height="190" alt="Captura de pantalla de 2026-01-20 12-42-53" src="https://github.com/user-attachments/assets/60e44f2f-5115-4ccc-a0be-95d858a859a9" />
+
+
+entrem dins la carpeta de continguts i podem iniciar l’executable
+
+<img width="1198" height="287" alt="Captura de pantalla de 2026-01-20 12-49-28" src="https://github.com/user-attachments/assets/4aa22dc2-9cde-4f7a-bec1-d0322967464e" />
+
+<img width="736" height="376" alt="Captura de pantalla de 2026-01-20 12-47-59" src="https://github.com/user-attachments/assets/e6c0f49c-db4b-4b00-a8db-1cf929026363" />
+
+
+Amb apache directory studio podem crear i gestionar uo, grups, usuaris a nivell de proves, entre altres
+
+<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 12-52-45" src="https://github.com/user-attachments/assets/a87e3f29-de40-46fa-848e-4857c9db8a20" />
+
+
+Primer em de crear una conexio ja existent, a "nou" triem "nova connexio"
+
+<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 12-52-45" src="https://github.com/user-attachments/assets/7e4f1cdb-6b2d-43ae-96bd-d9d95e991c9f" />
+
+
+Configurem un nom de conexio, un hostname i el port de ldap
+
+<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-10-38" src="https://github.com/user-attachments/assets/1a76bb60-2a28-49b1-ad74-065008580237" />
+
+
+configurem el dn amb l'usuari admin i la nostra contrasenya i comprovem que la connexio funciona abans de seguir
+
+<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-10-30" src="https://github.com/user-attachments/assets/72701bca-084b-49c1-8ca4-5b26469b5961" />
+
+<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-10-10" src="https://github.com/user-attachments/assets/4c510fe5-36e0-40f8-9493-d8d0d1cc2e5f" />
+
+#### UO
+
+Ara podem crear una UO nova, triem "nova entrada"
+
+<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-10-10" src="https://github.com/user-attachments/assets/613ee3e9-5367-4ff7-82a6-5f73f2394f15" />
+
+
+Despres afegim organizationalUnit
+
+<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-10-10" src="https://github.com/user-attachments/assets/85dc5551-b52a-411c-9c43-c6623e4ab6d3" />
+
+
+Configurem que volem afegir una uo i el nom
+
+<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-10-10" src="https://github.com/user-attachments/assets/083d8569-7024-4306-9371-47ad06975013" />
+
+
+Veiem el resum i com es crea correctament a la connexio
+
+<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-10-10" src="https://github.com/user-attachments/assets/893658c1-709d-4585-a100-e09c6d8e9062" />
+
+<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-10-10" src="https://github.com/user-attachments/assets/e7c690d6-cec8-4560-b5c7-21a6a25b3104" />
+
+
+#### Grup
+
+Per crear un grup tornem a afegir entrada nova i triem posixGrup per afegir
+
+<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-10-10" src="https://github.com/user-attachments/assets/730f6832-7774-4ffc-9ec5-91319e3390a7" />
+
+Configurem el cn
+
+<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-10-10" src="https://github.com/user-attachments/assets/8da78e62-262f-4027-8383-ee8c8ab8b1c3" />
+
+i un gid de grup
+
+<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-10-10" src="https://github.com/user-attachments/assets/2b818b0c-c857-4e45-9db5-88b79c204a30" />
+
+Es crea correctament
+
+<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-10-10" src="https://github.com/user-attachments/assets/ab55cbf5-b847-4362-b3b1-d420cb755727" />
+
+
+#### Usuari
+
+Per crear un usuari al afegir entrada nova afegim inetOrgPerson i posixAccount per poder vincular l'usuari a un grup
+
+<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-10-10" src="https://github.com/user-attachments/assets/966e5995-5b0d-4ff9-8ca2-572bd4fa608b" />
+
+
+Afegim el uid del usuari i el de grup, que coinicdeixi amb el que tenim creat
+
+<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-10-10" src="https://github.com/user-attachments/assets/49bcbf6b-4d01-4031-9fa6-c8441619a5f5" />
+
+
+Acabem d'afegir mes informacio com el directori de home 
+
+<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-10-10" src="https://github.com/user-attachments/assets/9c102786-4e07-44cc-8f13-bf208e942810" />
+
+Resultat final creat
+
+<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-10-10" src="https://github.com/user-attachments/assets/7fabd410-321e-4252-8b8b-5208c4f197ee" />
 
 
