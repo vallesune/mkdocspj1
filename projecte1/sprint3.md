@@ -221,63 +221,68 @@ configurem el dn amb l'usuari admin i la nostra contrasenya i comprovem que la c
 
 Ara podem crear una UO nova, triem "nova entrada"
 
-<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-10-10" src="https://github.com/user-attachments/assets/613ee3e9-5367-4ff7-82a6-5f73f2394f15" />
+<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-14-34" src="https://github.com/user-attachments/assets/6933a630-4a86-42d4-ad72-1e9e02de074a" />
 
 
 Despres afegim organizationalUnit
 
-<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-10-10" src="https://github.com/user-attachments/assets/85dc5551-b52a-411c-9c43-c6623e4ab6d3" />
+<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-20-09" src="https://github.com/user-attachments/assets/81470b35-8f54-4930-93ab-38a782df3722" />
 
 
 Configurem que volem afegir una uo i el nom
 
-<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-10-10" src="https://github.com/user-attachments/assets/083d8569-7024-4306-9371-47ad06975013" />
+<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-20-17" src="https://github.com/user-attachments/assets/bbd6f6b8-f037-4779-a805-eda6d13c58df" />
 
 
 Veiem el resum i com es crea correctament a la connexio
 
-<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-10-10" src="https://github.com/user-attachments/assets/893658c1-709d-4585-a100-e09c6d8e9062" />
+<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-20-22" src="https://github.com/user-attachments/assets/d9509ad0-afc1-4de8-ba0a-c7c42d30ecf7" />
 
-<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-10-10" src="https://github.com/user-attachments/assets/e7c690d6-cec8-4560-b5c7-21a6a25b3104" />
+<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-20-29" src="https://github.com/user-attachments/assets/00310021-eb33-4f85-9081-0f1f69edb5c8" />
 
 
 #### Grup
 
 Per crear un grup tornem a afegir entrada nova i triem posixGrup per afegir
 
-<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-10-10" src="https://github.com/user-attachments/assets/730f6832-7774-4ffc-9ec5-91319e3390a7" />
+<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-27-58" src="https://github.com/user-attachments/assets/6038a75c-db50-43ca-9ac3-da86e688c0fe" />
+
 
 Configurem el cn
 
-<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-10-10" src="https://github.com/user-attachments/assets/8da78e62-262f-4027-8383-ee8c8ab8b1c3" />
+<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-28-44" src="https://github.com/user-attachments/assets/6bae23a8-1196-4022-8574-74f9a05deabc" />
+
 
 i un gid de grup
 
-<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-10-10" src="https://github.com/user-attachments/assets/2b818b0c-c857-4e45-9db5-88b79c204a30" />
+<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-32-32" src="https://github.com/user-attachments/assets/277c1aff-c9df-499e-b300-806dccdb7bde" />
+
 
 Es crea correctament
 
-<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-10-10" src="https://github.com/user-attachments/assets/ab55cbf5-b847-4362-b3b1-d420cb755727" />
+<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-32-41" src="https://github.com/user-attachments/assets/9376cf7a-86ca-4090-b58c-42a56065db49" />
 
 
 #### Usuari
 
 Per crear un usuari al afegir entrada nova afegim inetOrgPerson i posixAccount per poder vincular l'usuari a un grup
 
-<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-10-10" src="https://github.com/user-attachments/assets/966e5995-5b0d-4ff9-8ca2-572bd4fa608b" />
+<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-39-37" src="https://github.com/user-attachments/assets/4bdd4187-3a7a-4575-b1e8-78ef584e0607" />
 
 
 Afegim el uid del usuari i el de grup, que coinicdeixi amb el que tenim creat
 
-<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-10-10" src="https://github.com/user-attachments/assets/49bcbf6b-4d01-4031-9fa6-c8441619a5f5" />
+<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-40-37" src="https://github.com/user-attachments/assets/6d6dc1fd-eec2-4e01-8b2d-67a0a8e35db5" />
 
 
 Acabem d'afegir mes informacio com el directori de home 
 
-<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-10-10" src="https://github.com/user-attachments/assets/9c102786-4e07-44cc-8f13-bf208e942810" />
+<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-41-15" src="https://github.com/user-attachments/assets/1cc5a965-a9a3-401c-b69e-39a008f05329" />
+
 
 Resultat final creat
 
-<img width="962" height="743" alt="Captura de pantalla de 2026-01-20 13-10-10" src="https://github.com/user-attachments/assets/7fabd410-321e-4252-8b8b-5208c4f197ee" />
+<img width="1038" height="743" alt="Captura de pantalla de 2026-01-20 13-42-18" src="https://github.com/user-attachments/assets/fb1dbb2b-db46-4226-8c49-b9e8794c9f40" />
+
 
 
