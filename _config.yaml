@@ -4,3 +4,8 @@ sass:
 
 include:
   - assetscss/custom.css
+
+markdown: kramdown
+
+kramdown:
+  toc_levels: 2..3..4
