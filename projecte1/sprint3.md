@@ -28,6 +28,7 @@ Ens descarregem del moodle els archius base de configuracio
 Cambiem el hostname de la maquina a /etc/hostname i despres a /etc/hosts, indicant tambe el nom del domini
 
 <img width="548" height="162" alt="Captura de pantalla de 2026-01-08 13-26-55" src="https://github.com/user-attachments/assets/5e113d96-e5ac-48fe-8be0-7bda0850e3bb" />
+
 <img width="548" height="162" alt="Captura de pantalla de 2026-01-08 13-28-18" src="https://github.com/user-attachments/assets/8b2dfa3e-a899-41e4-9dc7-0e5fd0c68532" />
 
 
@@ -313,7 +314,9 @@ I modifiquem els dn per que sigue el nostre
 
 <img width="700" height="541" alt="Captura de pantalla de 2026-01-27 10-56-28" src="https://github.com/user-attachments/assets/0dac397f-b44b-4517-ac9e-f70fbb627fdd" />
 
+
 <img width="700" height="541" alt="Captura de pantalla de 2026-01-27 10-56-39" src="https://github.com/user-attachments/assets/535ef68d-b961-4519-b181-d96a13e9ddf8" />
+
 
 <img width="700" height="541" alt="Captura de pantalla de 2026-01-27 10-56-53" src="https://github.com/user-attachments/assets/f3bfe396-abf5-4c29-b55f-1dd2763f3515" />
 
@@ -336,6 +339,7 @@ Comencem afegint un nou usuari a partir d'un fitxer ldif modificat com una entra
 
 <img width="568" height="26" alt="Captura de pantalla de 2026-01-27 12-08-56" src="https://github.com/user-attachments/assets/32c31104-dca5-4c7c-8993-f62772f717e9" />
 
+
 <img width="358" height="284" alt="Captura de pantalla de 2026-01-27 12-07-20" src="https://github.com/user-attachments/assets/c72e0310-185c-43c5-8e3b-9cde650fece4" />
 
 
@@ -347,6 +351,7 @@ I amb ldapadd el podem afegir
 El podem buscar amb ldapsearch amb el parametre de la uid
 
 <img width="825" height="272" alt="Captura de pantalla de 2026-01-27 12-10-27" src="https://github.com/user-attachments/assets/4d59b2a6-55c1-4f6e-9489-615e8e675abd" />
+
 
 
 2.
@@ -368,4 +373,126 @@ Comprovem buscant amb ldapsearch amb el parametre de "ou=nomines"
 <img width="823" height="108" alt="Captura de pantalla de 2026-01-27 12-13-37" src="https://github.com/user-attachments/assets/815abd00-3fe3-46a9-a27a-29055b88f842" />
 
 
+
+3.
+
+Per afegir l'usuari que em creat a la ou que em creat utilitzarem changetype modify per remplaçar la ou al fitxer ldif
+
+<img width="360" height="104" alt="Captura de pantalla de 2026-01-27 12-20-45" src="https://github.com/user-attachments/assets/934d049d-6df0-4e55-b2cb-af7db56d73cb" />
+
+
+Despres executem ldapmodify sobre el fitxer
+
+<img width="973" height="76" alt="Captura de pantalla de 2026-01-27 12-18-51" src="https://github.com/user-attachments/assets/aff54be6-e2d3-4e00-a3f2-6b1438309074" />
+
+
+I si comprobem tot i que al dn seguiex apareixen la ou rrhh que ja tenia tambe apareix la nova 
+
+<img width="819" height="380" alt="Captura de pantalla de 2026-01-27 12-20-00" src="https://github.com/user-attachments/assets/67d63bdd-a09f-4a8f-a9f2-07717776a38b" />
+
+
+
+4.
+
+Podem buscar tots els grups que hi ha utilitzant el parametre "objectClass=posixGroup" al ldapsearch, en aquest cas son dos informatica i administracio
+
+<img width="939" height="284" alt="Captura de pantalla de 2026-01-27 12-24-26" src="https://github.com/user-attachments/assets/490cc494-e814-4cd8-ae35-300a56a56d4c" />
+
+
+
+5.
+
+Per afegir l'usuari Alu1 al grup d'informatica modifiquem el fitxer ldif i afegim amb changetype add l'usuari com a posixacount indicant la gid i nom del grup 
+
+(la foto esta mal por eso me salio raro lo puse como posixgroup no account)
+
+<img width="360" height="131" alt="Captura de pantalla de 2026-01-27 12-29-02" src="https://github.com/user-attachments/assets/e6a261fd-276d-4626-8d1b-4584ba1b8f1c" />
+
+
+
+tornem a executar el ldapmodify
+
+<img width="1001" height="80" alt="Captura de pantalla de 2026-01-27 12-29-32" src="https://github.com/user-attachments/assets/d655e963-c732-42dc-b8cb-c9955439afb4" />
+
+
+
+I comprovem en ldapsearch filtrant per la uid que al usuari apareix la gid nova (que esta mal por lo q acabo de ver)(tendria q ser gid 1001)
+
+<img width="842" height="288" alt="Captura de pantalla de 2026-01-27 12-30-44" src="https://github.com/user-attachments/assets/84b1cd46-f1d6-4c9e-a85e-447ceebc1f30" />
+
+
+
+6.
+
+Ara podem fer dos modificacions a la vegada des del mateix fitxer que s'executen a la mateixa comanda ja que son dos changetype modify i separem cada parametre amb una linia i un guio "-"
+
+Aqui afegim un atribut opcional com l'email i modifiquem el cognom
+
+<img width="389" height="164" alt="Captura de pantalla de 2026-01-27 12-38-26" src="https://github.com/user-attachments/assets/de970db6-8003-48c3-bf6b-d1ce9a25673b" />
+
+
+Executem una sola comada per realitzar els dos canvis
+
+<img width="961" height="84" alt="Captura de pantalla de 2026-01-27 12-38-53" src="https://github.com/user-attachments/assets/fb9e62c0-3de9-4a7f-8ccb-bfc4683c80aa" />
+
+
+I comprovem filtrant per la uid del usuari que els dos canvis s'han fet correctament
+
+<img width="803" height="291" alt="Captura de pantalla de 2026-01-27 12-39-22" src="https://github.com/user-attachments/assets/66d63b03-d797-43cc-8cfc-1da41061c7eb" />
+
+
+
+7.
+
+Podem buscar quins usuaris hi ha a una uo concreta afegint la ou al dn i despres buscant unicamnent uids per buscar usuaris 
+
+En aquest cas hi ha quatre usuaris
+
+<img width="833" height="280" alt="Captura de pantalla de 2026-01-27 12-40-38" src="https://github.com/user-attachments/assets/5b16f729-94f7-45fa-955c-ed45c4f70ce0" />
+
+
+
+8.
+
+Pod
+
+
+9.
+
+Pod
+
+
+10.
+
+Pod
+
+
+
+11.
+
+Pod
+
+
+
+12.
+
+Pod
+
+
+
+13.
+
+Pod
+
+
+
+14.
+
+Pod
+
+
+
+15.
+
+Pod
 
