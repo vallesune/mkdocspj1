@@ -285,4 +285,13 @@ Resultat final creat
 <img width="1038" height="743" alt="Captura de pantalla de 2026-01-20 13-42-18" src="https://github.com/user-attachments/assets/fb1dbb2b-db46-4226-8c49-b9e8794c9f40" />
 
 
+## 2. Proves LDAP
+
+reconfigurem per tenir l'ldap net
+descarregem les dades de prova pt10 ldif del moodle
+modifiquem els dc necesiaris i carregem les dades
+slapcats per comprovar
+
+despres les proves
+
 
