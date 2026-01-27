@@ -287,11 +287,85 @@ Resultat final creat
 
 ## 2. Proves LDAP
 
-reconfigurem per tenir l'ldap net
-descarregem les dades de prova pt10 ldif del moodle
-modifiquem els dc necesiaris i carregem les dades
-slapcats per comprovar
+### Reconfiguracio
 
-despres les proves
+Netejem la bd de ldap per fer noves proves
+
+<img width="727" height="136" alt="Captura de pantalla de 2026-01-27 10-36-38" src="https://github.com/user-attachments/assets/dad5c42e-11d2-4f9d-83ec-19f94f608dfe" />
+
+
+Borrem la base de dades anterior
+
+<img width="724" height="435" alt="Captura de pantalla de 2026-01-27 10-35-51" src="https://github.com/user-attachments/assets/341519b1-d338-4a53-86e9-c4f44cf9f3d3" />
+
+
+Comprovem en un slapcat
+
+<img width="491" height="294" alt="Captura de pantalla de 2026-01-27 10-36-26" src="https://github.com/user-attachments/assets/e8771507-fee9-4fff-b51d-b716329c683d" />
+
+
+Ens descarregem un fitxer de dades de prova
+
+<img width="412" height="73" alt="Captura de pantalla de 2026-01-27 10-53-12" src="https://github.com/user-attachments/assets/3dafb766-f987-4019-9203-c88bb2cce75f" />
+
+
+I modifiquem els dn per que sigue el nostre
+
+<img width="700" height="541" alt="Captura de pantalla de 2026-01-27 10-56-28" src="https://github.com/user-attachments/assets/0dac397f-b44b-4517-ac9e-f70fbb627fdd" />
+
+<img width="700" height="541" alt="Captura de pantalla de 2026-01-27 10-56-39" src="https://github.com/user-attachments/assets/535ef68d-b961-4519-b181-d96a13e9ddf8" />
+
+<img width="700" height="541" alt="Captura de pantalla de 2026-01-27 10-56-53" src="https://github.com/user-attachments/assets/f3bfe396-abf5-4c29-b55f-1dd2763f3515" />
+
+
+En un ldapadd afegim les entrades
+
+<img width="743" height="318" alt="Captura de pantalla de 2026-01-27 12-00-45" src="https://github.com/user-attachments/assets/a7f451cc-ec8b-4ec8-9dbc-6af84250cd00" />
+
+
+Comprovem de nou en slapcat que ara tenim informacio
+
+<img width="555" height="700" alt="Captura de pantalla de 2026-01-27 12-01-22" src="https://github.com/user-attachments/assets/b2c11432-9364-463e-8974-e226a8decbde" />
+
+
+### Proves
+
+1. 
+
+Comencem afegint un nou usuari a partir d'un fitxer ldif modificat com una entrada normal
+
+<img width="568" height="26" alt="Captura de pantalla de 2026-01-27 12-08-56" src="https://github.com/user-attachments/assets/32c31104-dca5-4c7c-8993-f62772f717e9" />
+
+<img width="358" height="284" alt="Captura de pantalla de 2026-01-27 12-07-20" src="https://github.com/user-attachments/assets/c72e0310-185c-43c5-8e3b-9cde650fece4" />
+
+
+I amb ldapadd el podem afegir
+
+<img width="956" height="74" alt="Captura de pantalla de 2026-01-27 12-07-54" src="https://github.com/user-attachments/assets/2223e6ae-ea50-488b-8419-2c4946c746b3" />
+
+
+El podem buscar amb ldapsearch amb el parametre de la uid
+
+<img width="825" height="272" alt="Captura de pantalla de 2026-01-27 12-10-27" src="https://github.com/user-attachments/assets/4d59b2a6-55c1-4f6e-9489-615e8e675abd" />
+
+
+2.
+
+Ara afegirem de la mateixa manera una nova uo
+
+Creem primer l'entrada al fitxer
+
+<img width="321" height="111" alt="image" src="https://github.com/user-attachments/assets/dfed1401-ca24-4d32-b366-48071835b93a" />
+
+
+I l'afegim amb ldapadd
+
+<img width="935" height="77" alt="Captura de pantalla de 2026-01-27 12-13-00" src="https://github.com/user-attachments/assets/5bea62cc-cf3a-421d-9be2-cc8b615d3c09" />
+
+
+Comprovem buscant amb ldapsearch amb el parametre de "ou=nomines"
+
+<img width="823" height="108" alt="Captura de pantalla de 2026-01-27 12-13-37" src="https://github.com/user-attachments/assets/815abd00-3fe3-46a9-a27a-29055b88f842" />
+
 
 
