@@ -454,36 +454,93 @@ En aquest cas hi ha quatre usuaris
 
 8.
 
-Pod
+Si provem d'eliminar un atribut obligatori com el gidnumber d'un grup ens dona l'error de que es un atribut obligatori per tant primer eliminiem l'atribut "posixGroup" 
+i el modificarem per un tipus de grups logics en "groupOfNames"
+
+
+i despres ja podem eliminar l'atribut gidnumber 
+
+(se podra hacer todo de un doc i de un comando de una? mejor si si)
+
+(probar esto)
+<img width="482" height="85" alt="Captura de pantalla de 2026-01-27 12-44-00" src="https://github.com/user-attachments/assets/b3395c60-970b-4199-bbe5-fa7c63ba4858" />
+
+<img width="1005" height="117" alt="Captura de pantalla de 2026-01-27 12-44-37" src="https://github.com/user-attachments/assets/35336c9e-6b08-4aa3-9951-d1c3f394c11a" />
+
 
 
 9.
 
-Pod
+Per buscar cuantes uo hi ha al nostre ldap podem buscar per object class de tipo "organizationalUnit" i veiem que en el nostre cas ni ha tres
+
+<img width="988" height="291" alt="Captura de pantalla de 2026-01-27 12-49-49" src="https://github.com/user-attachments/assets/a76e599d-c132-44b9-b1a1-a2fd3e00af4d" />
+
+comando found que "cuenta" las entradas:
+ldapsearch -xLLL -b "dc=gina,dc=cat" dn | grep -c "^dn:"
+
 
 
 10.
 
-Pod
+Per modificar un cn i dn principals utilitzem el changetype "modrdn" i podrem modificar el cn primer i despres eliminarem el dn antic i l'indicarem de nou sense el cn antic
+
+<img width="359" height="121" alt="Captura de pantalla de 2026-01-27 12-53-13" src="https://github.com/user-attachments/assets/11922d55-54cd-476d-b03f-4260f7d1b182" />
+
+
+Per realitzar els canvis utlitzem ldapmodify 
+
+<img width="986" height="77" alt="Captura de pantalla de 2026-01-27 12-56-53" src="https://github.com/user-attachments/assets/abcbefcd-e7a0-4228-b3fc-ffc6f79671ea" />
+
+
+Si busquem per en seu antic cn no trobem cap resultat
+
+<img width="805" height="42" alt="Captura de pantalla de 2026-01-27 12-57-57" src="https://github.com/user-attachments/assets/e3d1e538-d776-492d-949c-9bebc0fa5578" />
+
+
+En canvi si busquem per la uid, que no esta modificada veiem els canvis
+
+<img width="828" height="282" alt="Captura de pantalla de 2026-01-27 12-57-42" src="https://github.com/user-attachments/assets/b009a054-0311-43ac-81fd-24044ba96020" />
 
 
 
-11.
+11. revisar? alomejor si hago los cambios de lo de alu1 tmb cambio esto?
 
-Pod
+Per eliminar una uo que te usuaris que forment part primer em d'eliminar aquests usuaris de la uo
+
+<img width="367" height="104" alt="Captura de pantalla de 2026-01-27 13-03-09" src="https://github.com/user-attachments/assets/88be28c2-dc94-466d-b33c-909f0d486ed8" />
+
+<img width="991" height="77" alt="Captura de pantalla de 2026-01-27 13-02-15" src="https://github.com/user-attachments/assets/ac70dbbc-9f2b-402b-91ed-b4661cd2711f" />
+
+
+Despres amb "ldapdelete" podem directament eliminar la ou amb el seu dn
+
+<img width="1054" height="49" alt="Captura de pantalla de 2026-01-27 13-03-38" src="https://github.com/user-attachments/assets/85331d82-c0a6-4fc4-9dc7-c2f29cc162bc" />
+
+
+Ja no existeix
+
+<img width="811" height="39" alt="Captura de pantalla de 2026-01-27 13-04-10" src="https://github.com/user-attachments/assets/1536ba99-f09b-4a40-b3d9-9f9f91731970" />
+
 
 
 
 12.
 
 Pod
+(aqui solo habia buscado por el cn del grupo i no es eso a partir del grupo sacas la gidnumber i luego buscas los users que tengan ese gid, los que tienen gid son grupo principal
+los que tienen memberid son secundarios)
+
+esto es lo q tenia
+
+<img width="883" height="166" alt="Captura de pantalla de 2026-01-27 13-24-04" src="https://github.com/user-attachments/assets/127f212d-9c73-47e7-ad76-558a3a4e0abf" />
 
 
 
 13.
 
-Pod
+Per buscar un usuari concret del que sabem la seva uid unicament hem de buscar com a parametre "uid=1002"
 
+<img width="870" height="271" alt="Captura de pantalla de 2026-01-27 13-06-12" src="https://github.com/user-attachments/assets/62fb4353-aa6a-400d-8735-12009639bfa7" />
 
 
 14.
