@@ -545,11 +545,33 @@ Per buscar un usuari concret del que sabem la seva uid unicament hem de buscar c
 
 14.
 
-Pod
+obtenim unicament a Alu1
+parametre “(&(uidNumber>=1003)(sn=R*))”
+utilitzem & per que hagui de cumplir els dos parametres
+
+<img width="990" height="269" alt="Captura de pantalla de 2026-01-27 13-10-10" src="https://github.com/user-attachments/assets/127ac345-cf8c-4dac-8a2f-7edb2c624f84" />
 
 
 
 15.
 
-Pod
+objectClass=posixAccount “(|(gidNumber=1001)(sn=Pallares))” dn uid cn sn gidNumber
+utilitzem “|” per que nomes tingui que cumplir un parametre o el altre
+el resultat son dos usuaris del grup informatica i un usuari en cognom pallares
 
+<img width="1205" height="370" alt="Captura de pantalla de 2026-01-27 13-17-40" src="https://github.com/user-attachments/assets/1946ae4c-80b6-44ea-903c-998740f9918e" />
+
+
+
+
+
+## 3. Servidor Samba
+
+### Part Servidor
+
+jjjj
+
+
+### Part Client
+
+jjjjj
