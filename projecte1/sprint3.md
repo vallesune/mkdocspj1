@@ -569,9 +569,50 @@ el resultat son dos usuaris del grup informatica i un usuari en cognom pallares
 
 ### Part Servidor
 
-jjjj
+Previament a instalar el samba configurarem una serie de carpetes i usuaris per proves 
+
+Creem tres usuaris amb "useradd" i no amb "adduser" per que no es creen en configuracions de home,login,altres per defecte i afegim el parametre /sbin/nologin 
+
+Tambe crearem un grup per ficar alguns dels usuaris per comprovar diferents permisos
+
+Despres afegim dos dels usuaris al grup i podem comprovar que s'han creat en un cat del fitxer /etc/passwd
+
+<img width="502" height="396" alt="Captura de pantalla de 2026-01-29 12-50-51" src="https://github.com/user-attachments/assets/a218de75-ff63-4acb-b1fc-e4bfa67c5d49" />
+
+
+Configurem una contrasenya per cada usuari
+
+<img width="387" height="253" alt="Captura de pantalla de 2026-01-29 13-12-29" src="https://github.com/user-attachments/assets/24ed3cea-8fb2-4df0-99b2-36fcb820f070" />
+
+
+Creem una carpeta amb tots el permisos i cap usuari ni grup propietari
+
+<img width="646" height="145" alt="Captura de pantalla de 2026-01-29 12-47-55" src="https://github.com/user-attachments/assets/13012311-ee89-4680-b3cd-de97176f2621" />
+
+
+Per instalar Samba al servidor unicament instalem el paquet "samba" amb "apt install samba"
+
+<img width="647" height="173" alt="Captura de pantalla de 2026-01-29 12-45-13" src="https://github.com/user-attachments/assets/3c0a1406-f458-499f-9041-9eb149b1cbec" />
+
+
+Ara modifiquem el fitxer smb.conf i afegim els permisos que creguem necessaris per els diferents usuaris o grups
+
+<img width="502" height="396" alt="Captura de pantalla de 2026-01-29 12-56-16" src="https://github.com/user-attachments/assets/231c2683-e223-4a39-8354-44fd3c8df6ef" />
+
+
+Reiniciem el servei samba per aplicar els canvis
+
+<img width="478" height="55" alt="Captura de pantalla de 2026-01-29 12-58-09" src="https://github.com/user-attachments/assets/6605709c-6c07-49f4-8da8-4ec0ce73e564" />
+
+
+Per ultim comprovem que el servei esta actiu correctament 
+
+<img width="620" height="474" alt="Captura de pantalla de 2026-01-29 12-58-47" src="https://github.com/user-attachments/assets/e3b37d79-425e-4b8f-9b9d-e761d0175948" />
+
+
 
 
 ### Part Client
 
 jjjjj
+
