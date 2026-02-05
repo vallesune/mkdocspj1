@@ -448,17 +448,7 @@ En aquest cas hi ha tres usuaris ja que alu1 ja no forma part de la ou
 
 
 
-8.
-
-Si provem d'eliminar un atribut obligatori com el gidnumber d'un grup ens dona l'error de que es un atribut obligatori per tant primer eliminiem l'atribut "posixGroup" 
-i el modificarem per un tipus de grups logics en "groupOfNames"
-
-
-i despres ja podem eliminar l'atribut gidnumber 
-
-(se podra hacer todo de un doc i de un comando de una? mejor si si)
-
-(probar eso)
+8. 
 
 Si simplement intentem modificar el grup en un delete del gid ens dona l'error de que el gid es un atribut obligatori de posixGroup 
 
@@ -508,9 +498,9 @@ En canvi si busquem per la uid, que no esta modificada veiem els canvis
 
 Per eliminar una uo que te usuaris que forment part primer em d'eliminar aquests usuaris de la uo modificant el dn
 
-<img width="729" height="306" alt="image" src="https://github.com/user-attachments/assets/3bdf7dbc-481f-46b6-a22d-53cdb38985fa" />
+<img width="366" height="142" alt="image" src="https://github.com/user-attachments/assets/464be3c5-3ef3-4d05-b482-c04f0669ee7e" />
 
-<img width="729" height="306" alt="image" src="https://github.com/user-attachments/assets/7bcd6317-3896-4be1-879c-e4a726138aab" />
+<img width="366" height="142" alt="image" src="https://github.com/user-attachments/assets/96644192-a00f-47e0-a471-6122683cfa57" />
 
 
 Despres amb "ldapdelete" podem directament eliminar la ou amb el seu dn
@@ -527,13 +517,9 @@ Ja no existeix
 
 12.
 
-(aqui solo habia buscado por el cn del grupo i no es eso a partir del grupo sacas la gidnumber i luego buscas los users que tengan ese gid, los que tienen gid son grupo principal
-los que tienen memberid son secundarios)
+Per buscar els usuaris que tinguin un grup concret principal, si sabem el seu gidNumber unicament ens cal buscar per aquest parametres ja que en els usuaris es el que identifica el seu grup principal
 
-esto es lo q tenia
-
-<img width="883" height="166" alt="Captura de pantalla de 2026-01-27 13-24-04" src="https://github.com/user-attachments/assets/127f212d-9c73-47e7-ad76-558a3a4e0abf" />
-
+<img width="851" height="400" alt="image" src="https://github.com/user-attachments/assets/dab33647-07fa-4165-8e23-42fb51efdf94" />
 
 
 13.
@@ -557,9 +543,9 @@ Obtenim unicament a Alu1
 
 15.
 
-objectClass=posixAccount “(|(gidNumber=1001)(sn=Pallares))” dn uid cn sn gidNumber
-utilitzem “|” per que nomes tingui que cumplir un parametre o el altre
-el resultat son dos usuaris del grup informatica i un usuari en cognom pallares
+Per buscar un usuari que compleixi minim un paramentres d'entre dos o mes utilitzem el simbol pipe "|" 
+
+Volem buscar els usuaris que tinguin de grup principal informatica o els que tenen cognom "Pallares"
 
 <img width="1205" height="370" alt="Captura de pantalla de 2026-01-27 13-17-40" src="https://github.com/user-attachments/assets/1946ae4c-80b6-44ea-903c-998740f9918e" />
 
