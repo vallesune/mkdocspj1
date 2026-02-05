@@ -458,7 +458,10 @@ i despres ja podem eliminar l'atribut gidnumber
 
 (se podra hacer todo de un doc i de un comando de una? mejor si si)
 
-(probar esto)
+(probar eso)
+
+Si simplement intentem modificar el grup en un delete del gid ens dona l'error de que el gid es un atribut obligatori de posixGroup 
+
 <img width="482" height="85" alt="Captura de pantalla de 2026-01-27 12-44-00" src="https://github.com/user-attachments/assets/b3395c60-970b-4199-bbe5-fa7c63ba4858" />
 
 <img width="1005" height="117" alt="Captura de pantalla de 2026-01-27 12-44-37" src="https://github.com/user-attachments/assets/35336c9e-6b08-4aa3-9951-d1c3f394c11a" />
@@ -501,7 +504,7 @@ En canvi si busquem per la uid, que no esta modificada veiem els canvis
 
 
 
-11. revisar? alomejor si hago los cambios de lo de alu1 tmb cambio esto?
+11. 
 
 Per eliminar una uo que te usuaris que forment part primer em d'eliminar aquests usuaris de la uo modificant el dn
 
@@ -542,9 +545,11 @@ Per buscar un usuari concret del que sabem la seva uid unicament hem de buscar c
 
 14.
 
-obtenim unicament a Alu1
-parametre “(&(uidNumber>=1003)(sn=R*))”
-utilitzem & per que hagui de cumplir els dos parametres
+Per buscar un usuari que compleixi dos o mes paramentres utilitzem el simbol & 
+
+En aquest cas busquem els usuaris que tinguin una uid igual o major a 1003 i que la primera lletra del cognom sigui la R
+
+Obtenim unicament a Alu1
 
 <img width="990" height="269" alt="Captura de pantalla de 2026-01-27 13-10-10" src="https://github.com/user-attachments/assets/127ac345-cf8c-4dac-8a2f-7edb2c624f84" />
 
