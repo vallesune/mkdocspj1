@@ -376,9 +376,9 @@ Comprovem buscant amb ldapsearch amb el parametre de "ou=nomines"
 
 3.
 
-Per afegir l'usuari que em creat a la ou que em creat utilitzarem changetype modify per remplaçar la ou al fitxer ldif
+Per afegir l'usuari que em creat a la ou que em creat utilitzarem changetype modrdn per remplaçar la ou al dn desde el fitxer ldif
 
-<img width="360" height="104" alt="Captura de pantalla de 2026-01-27 12-20-45" src="https://github.com/user-attachments/assets/934d049d-6df0-4e55-b2cb-af7db56d73cb" />
+<img width="388" height="131" alt="image" src="https://github.com/user-attachments/assets/696b5595-06a7-41a3-ba9d-d19f3a0e0d55" />
 
 
 Despres executem ldapmodify sobre el fitxer
@@ -386,9 +386,9 @@ Despres executem ldapmodify sobre el fitxer
 <img width="973" height="76" alt="Captura de pantalla de 2026-01-27 12-18-51" src="https://github.com/user-attachments/assets/aff54be6-e2d3-4e00-a3f2-6b1438309074" />
 
 
-I si comprobem tot i que al dn seguiex apareixen la ou rrhh que ja tenia tambe apareix la nova 
+I si comprobem que s'ha modificat el dn correctament
 
-<img width="819" height="380" alt="Captura de pantalla de 2026-01-27 12-20-00" src="https://github.com/user-attachments/assets/67d63bdd-a09f-4a8f-a9f2-07717776a38b" />
+<img width="803" height="268" alt="image" src="https://github.com/user-attachments/assets/a5160960-226c-4df9-a0f3-52c58805f8cd" />
 
 
 
@@ -420,7 +420,7 @@ I comprovem en ldapsearch filtrant per el grup que apareix la uid del usuari
 
 6.
 
-Ara podem fer dos modificacions a la vegada des del mateix fitxer que s'executen a la mateixa comanda ja que son dos changetype modify i separem cada parametre amb una linia i un guio "-"
+Ara podem fer dos modificacions a la vegada des del mateix fitxer que s'executen a la mateixa comanda ja que son dos changetype modify i separem cada parametre amb una linia i un guio "-" per linea
 
 Aqui afegim un atribut opcional com l'email i modifiquem el cognom
 
@@ -442,9 +442,9 @@ I comprovem filtrant per la uid del usuari que els dos canvis s'han fet correcta
 
 Podem buscar quins usuaris hi ha a una uo concreta afegint la ou al dn i despres buscant unicamnent uids per buscar usuaris 
 
-En aquest cas hi ha quatre usuaris
+En aquest cas hi ha tres usuaris ja que alu1 ja no forma part de la ou
 
-<img width="833" height="280" alt="Captura de pantalla de 2026-01-27 12-40-38" src="https://github.com/user-attachments/assets/5b16f729-94f7-45fa-955c-ed45c4f70ce0" />
+<img width="841" height="219" alt="image" src="https://github.com/user-attachments/assets/eaa2fd42-cd58-4d58-939a-3e0d2da09252" />
 
 
 
@@ -469,16 +469,18 @@ i despres ja podem eliminar l'atribut gidnumber
 
 Per buscar cuantes uo hi ha al nostre ldap podem buscar per object class de tipo "organizationalUnit" i veiem que en el nostre cas ni ha tres
 
-<img width="988" height="291" alt="Captura de pantalla de 2026-01-27 12-49-49" src="https://github.com/user-attachments/assets/a76e599d-c132-44b9-b1a1-a2fd3e00af4d" />
+<img width="729" height="306" alt="image" src="https://github.com/user-attachments/assets/246052e7-fe91-4d83-968f-238d6db19878" />
 
-comando found que "cuenta" las entradas:
-ldapsearch -xLLL -b "dc=gina,dc=cat" dn | grep -c "^dn:"
+
+Si nomes ens interesa saber el nombre de uo que hi ha pero no quines son podem utilitzar el parametre "grep -c "^dn:" " 
+
+<img width="737" height="65" alt="image" src="https://github.com/user-attachments/assets/adb10c93-fe6d-4b0e-b968-5449a22c4400" />
 
 
 
 10.
 
-Per modificar un cn i dn principals utilitzem el changetype "modrdn" i podrem modificar el cn primer i despres eliminarem el dn antic i l'indicarem de nou sense el cn antic
+Per modificar el cn del dn principal utilitzem el changetype "modrdn" i podrem modificar el cn primer i despres eliminarem el dn antic i l'indicarem de nou sense el cn antic
 
 <img width="359" height="121" alt="Captura de pantalla de 2026-01-27 12-53-13" src="https://github.com/user-attachments/assets/11922d55-54cd-476d-b03f-4260f7d1b182" />
 
@@ -501,16 +503,16 @@ En canvi si busquem per la uid, que no esta modificada veiem els canvis
 
 11. revisar? alomejor si hago los cambios de lo de alu1 tmb cambio esto?
 
-Per eliminar una uo que te usuaris que forment part primer em d'eliminar aquests usuaris de la uo
+Per eliminar una uo que te usuaris que forment part primer em d'eliminar aquests usuaris de la uo modificant el dn
 
-<img width="367" height="104" alt="Captura de pantalla de 2026-01-27 13-03-09" src="https://github.com/user-attachments/assets/88be28c2-dc94-466d-b33c-909f0d486ed8" />
+<img width="729" height="306" alt="image" src="https://github.com/user-attachments/assets/3bdf7dbc-481f-46b6-a22d-53cdb38985fa" />
 
-<img width="991" height="77" alt="Captura de pantalla de 2026-01-27 13-02-15" src="https://github.com/user-attachments/assets/ac70dbbc-9f2b-402b-91ed-b4661cd2711f" />
+<img width="729" height="306" alt="image" src="https://github.com/user-attachments/assets/7bcd6317-3896-4be1-879c-e4a726138aab" />
 
 
 Despres amb "ldapdelete" podem directament eliminar la ou amb el seu dn
 
-<img width="1054" height="49" alt="Captura de pantalla de 2026-01-27 13-03-38" src="https://github.com/user-attachments/assets/85331d82-c0a6-4fc4-9dc7-c2f29cc162bc" />
+<img width="732" height="72" alt="image" src="https://github.com/user-attachments/assets/22e610b8-80ef-4a60-9153-c605710b6f4c" />
 
 
 Ja no existeix
@@ -522,7 +524,6 @@ Ja no existeix
 
 12.
 
-Pod
 (aqui solo habia buscado por el cn del grupo i no es eso a partir del grupo sacas la gidnumber i luego buscas los users que tengan ese gid, los que tienen gid son grupo principal
 los que tienen memberid son secundarios)
 
