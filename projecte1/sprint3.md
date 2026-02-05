@@ -402,23 +402,19 @@ Podem buscar tots els grups que hi ha utilitzant el parametre "objectClass=posix
 
 5.
 
-Per afegir l'usuari Alu1 al grup d'informatica modifiquem el fitxer ldif i afegim amb changetype add l'usuari com a posixacount indicant la gid i nom del grup 
+Per afegir l'usuari Alu1 al grup d'informatica modifiquem el fitxer ldif sobre el grup, no l'usuari, i amb changetype modify indiquem l'uid del usuari com a "memberuid" per a que sigui un grup secundari
 
-(la foto esta mal por eso me salio raro lo puse como posixgroup no account)
-
-<img width="360" height="131" alt="Captura de pantalla de 2026-01-27 12-29-02" src="https://github.com/user-attachments/assets/e6a261fd-276d-4626-8d1b-4584ba1b8f1c" />
+<img width="475" height="99" alt="image" src="https://github.com/user-attachments/assets/417c0baa-679d-47fd-9e1f-b14fdb0aad61" />
 
 
+apliquem els canvis
 
-tornem a executar el ldapmodify
-
-<img width="1001" height="80" alt="Captura de pantalla de 2026-01-27 12-29-32" src="https://github.com/user-attachments/assets/d655e963-c732-42dc-b8cb-c9955439afb4" />
-
+<img width="739" height="94" alt="image" src="https://github.com/user-attachments/assets/4bf2f6d8-455a-4be0-adf8-9a562c207831" />
 
 
-I comprovem en ldapsearch filtrant per la uid que al usuari apareix la gid nova (que esta mal por lo q acabo de ver)(tendria q ser gid 1001)
+I comprovem en ldapsearch filtrant per el grup que apareix la uid del usuari
 
-<img width="842" height="288" alt="Captura de pantalla de 2026-01-27 12-30-44" src="https://github.com/user-attachments/assets/84b1cd46-f1d6-4c9e-a85e-447ceebc1f30" />
+<img width="734" height="198" alt="image" src="https://github.com/user-attachments/assets/fa03ce9c-3018-438b-8c05-927ba8586c79" />
 
 
 
@@ -614,5 +610,30 @@ Per ultim comprovem que el servei esta actiu correctament
 
 ### Part Client
 
-jjjjj
+Per la part client l'unic que em de fer es amb "apt install" instalar el paquet "smbclient"
 
+<img width="813" height="290" alt="Captura de pantalla de 2026-01-29 13-05-39" src="https://github.com/user-attachments/assets/de8414bf-98af-483b-80b3-b43f1989a9cb" />
+
+
+Despres ja des del gestor de fitxers propi d'ubuntu podem accedir a conectar amb altres i li pasem el servei samba, la ip del servidor i la carpeta compartida
+
+<img width="601" height="80" alt="Captura de pantalla de 2026-01-29 13-10-50" src="https://github.com/user-attachments/assets/8850efe0-c99a-43d5-88df-96cd34c5657a" />
+
+
+Si provem a conectar com invitat, segons la configuracio mostrada anteriorment, podem conectar i crear contingut
+
+(cap)
+
+
+Si entrem amb l'usuari naim, igualment pot entrar i crear (comprov)
+
+<img width="497" height="439" alt="Captura de pantalla de 2026-01-29 13-13-40" src="https://github.com/user-attachments/assets/39b1d2d8-aac5-4c58-97b7-d8ee48eb2a15" />
+
+<img width="525" height="209" alt="Captura de pantalla de 2026-01-29 13-09-53" src="https://github.com/user-attachments/assets/bf4c1035-b7ff-4ca3-962d-80832b22f4e5" />
+
+
+En canvi si entrem en l'usuari edgar, pot entrar pero no crear
+
+<img width="497" height="439" alt="Captura de pantalla de 2026-01-29 13-14-21" src="https://github.com/user-attachments/assets/bcc93dcc-1f04-4331-a201-2095341ccab5" />
+
+<img width="606" height="219" alt="Captura de pantalla de 2026-01-29 13-15-28" src="https://github.com/user-attachments/assets/42808178-73a8-4852-a032-136fb48b0208" />
