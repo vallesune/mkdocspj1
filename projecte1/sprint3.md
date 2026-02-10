@@ -629,3 +629,18 @@ En canvi si entrem en l'usuari edgar, pot entrar pero no crear
 <img width="497" height="439" alt="Captura de pantalla de 2026-01-29 13-14-21" src="https://github.com/user-attachments/assets/bcc93dcc-1f04-4331-a201-2095341ccab5" />
 
 <img width="606" height="219" alt="Captura de pantalla de 2026-01-29 13-15-28" src="https://github.com/user-attachments/assets/42808178-73a8-4852-a032-136fb48b0208" />
+
+
+
+
+## 4. Servidor NFS
+
+### Part Servidor
+
+jjjj
+
+
+
+### Part Client
+
+jjjj
