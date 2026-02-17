@@ -635,9 +635,37 @@ En canvi si entrem en l'usuari edgar, pot entrar pero no crear
 
 ## 4. Servidor NFS
 
+NFS (Network File System) és un protocol que permet compartir fitxers i directoris en una xarxa. 
+A diferència de Samba, NFS no comparteix altres recursos com ara impressores i la seva autenticació es basa en el host i els permisos del sistema de fitxers, mentre que Samba utilitza autenticació per usuari.
+
 ### Part Servidor
 
-jjjj
+Instalem el nfs al servidor en un apt install nfs-server 
+
+<img width="738" height="387" alt="Captura de pantalla de 2026-02-10 12-50-09" src="https://github.com/user-attachments/assets/6705306e-1f9c-4f3d-9cfa-13a0e1d0738c" />
+
+
+Despres creem una carpeta amb tots els permisos i sense usuari ni grup owner
+
+<img width="678" height="154" alt="Captura de pantalla de 2026-02-10 12-52-43" src="https://github.com/user-attachments/assets/656f4fe4-d880-4dd5-89a0-6c81d739612d" />
+
+
+Editem el fitxer exports i afegim la ruta a la carpeta i els permisos
+
+L'asterisc es per indicar que totes les ip poden accedir, si nomes volem una ip o un rang concret s'indica substituint l'asterisc
+
+<img width="731" height="239" alt="Captura de pantalla de 2026-02-10 12-58-25" src="https://github.com/user-attachments/assets/b321944e-fd7a-4e63-a9d6-5c2e994eb4fb" />
+
+
+Reiniciem el servei nfs
+
+<img width="733" height="268" alt="Captura de pantalla de 2026-02-10 12-59-39" src="https://github.com/user-attachments/assets/58706c75-553c-430f-87e5-521c91274f09" />
+
+
+Creem alguns fitxers de prova dins la carpeta 
+
+<img width="348" height="125" alt="Captura de pantalla de 2026-02-10 13-00-30" src="https://github.com/user-attachments/assets/3ff9be20-4063-4108-b988-895f486b55e1" />
+
 
 
 
