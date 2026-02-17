@@ -638,7 +638,9 @@ En canvi si entrem en l'usuari edgar, pot entrar pero no crear
 NFS (Network File System) és un protocol que permet compartir fitxers i directoris en una xarxa. 
 A diferència de Samba, NFS no comparteix altres recursos com ara impressores i la seva autenticació es basa en el host i els permisos del sistema de fitxers, mentre que Samba utilitza autenticació per usuari.
 
-### Part Servidor
+### Comparticio sense ldap
+
+#### Part Servidor
 
 Instalem el nfs al servidor en un apt install nfs-server 
 
@@ -668,7 +670,40 @@ Creem alguns fitxers de prova dins la carpeta
 
 
 
+#### Part Client
 
-### Part Client
+Comprovem que el client pot fer ping al servidor
 
-jjjj
+<img width="591" height="214" alt="Captura de pantalla de 2026-02-10 13-10-41" src="https://github.com/user-attachments/assets/bb70b976-be4d-4628-b418-6a041e1279d1" />
+
+
+Instalem el paquet nfs-common i rpcbind
+
+<img width="717" height="287" alt="Captura de pantalla de 2026-02-10 13-03-08" src="https://github.com/user-attachments/assets/8c86e090-4017-41cf-9dd4-5dd27c01e08c" />
+
+
+Creem una carpeta de prova local que unirem a la del servidor amb els mateixos permisos
+
+<img width="561" height="121" alt="Captura de pantalla de 2026-02-10 13-09-23" src="https://github.com/user-attachments/assets/03aff366-aa79-4aa5-83c3-cbcfe98dfccd" />
+
+
+Modifiquem el fitxer fstab i afegim una linia on indiquem la ip del servidor i la ruta a la carpeta, despres la carpeta local i despres una serie de parametres
+
+<img width="876" height="298" alt="Captura de pantalla de 2026-02-10 13-23-51" src="https://github.com/user-attachments/assets/96d141de-199b-485b-b920-9e3dd77902ad" />
+
+
+Per ultim ja podem comprovar que a la carpeta local del client han aparegut els fitxers de la carpeta del server
+
+<img width="353" height="53" alt="Captura de pantalla de 2026-02-10 13-28-13" src="https://github.com/user-attachments/assets/8c89c14a-751e-424b-9e70-1c2c05638021" />
+
+
+#### Client Windows
+
+jjj
+
+
+### Comparticio en ldap
+
+#### Part Servidor
+
+jjj
