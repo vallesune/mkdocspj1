@@ -699,7 +699,20 @@ Per ultim ja podem comprovar que a la carpeta local del client han aparegut els 
 
 #### Client Windows
 
-jjj
+Des del panel de control, programes, modificar permisos de progames, activem les opcions nfs
+
+<img width="794" height="597" alt="Captura de pantalla de 2026-02-17 12-07-10" src="https://github.com/user-attachments/assets/541851bf-f019-4a3a-ac59-b64cb257b62b" />
+
+
+Des de terminal comprovem que podem fer ping al servidor
+
+<img width="459" height="224" alt="Captura de pantalla de 2026-02-17 12-08-50" src="https://github.com/user-attachments/assets/40266796-7da0-4799-8a71-7258f8488c8d" />
+
+
+Per ultim des del buscador d'arxius podem buscar per la ip del server i la carpeta i ens conectem correctament
+
+<img width="790" height="212" alt="Captura de pantalla de 2026-02-17 12-30-03" src="https://github.com/user-attachments/assets/7a98a124-86f4-4150-8634-e11816733b56" />
+
 
 
 ### Comparticio en ldap
