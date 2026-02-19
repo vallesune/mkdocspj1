@@ -719,9 +719,38 @@ Per ultim des del buscador d'arxius podem buscar per la ip del server i la carpe
 
 #### Part Servidor
 
-jjj
+Llimpiem la base de dades de ldap (reconfigure)
+
+Tornem a afegir un grup 
+
+I l'usuari que utilitzarem
+
+Creem la carpeta /homes per centralitzar les homes dels usuaris ldap
+
+cambiem permisos a 777 i nobody nogroup
+
+modifiquem el fitxer exports 
+
+reiniciem el servei de nfs
 
 
 #### Part Client
 
-jjj
+Creem una carpeta /homes i li modifiquem permisos a 777 i nobody nogroup
+
+Creem una carpeta per l'usuari dins de homes tambe amb permisos 777 i nobody nogroup
+
+Modifiquem el fitxer fstab 
+
+Reiniciem la maquina 
+
+Iniciem amb un altre client i utilitzem l'usuari i contrasenya del usuari del ldap
+
+Comprovem que la home s'ha creat a homes 
+
+Per ultim tornem al server a comprovar que s'han creat tambe les carpetes 
+
+<img width="519" height="109" alt="image" src="https://github.com/user-attachments/assets/08d9fd38-cec3-4270-ad69-0e22b34b156a" />
+
+
+
