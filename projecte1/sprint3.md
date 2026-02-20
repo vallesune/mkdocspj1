@@ -767,10 +767,12 @@ reiniciem el servei de nfs
 
 Creem una carpeta /homes i li modifiquem permisos a 777 i nobody nogroup
 
+<img width="559" height="121" alt="Captura de pantalla de 2026-02-20 10-19-28" src="https://github.com/user-attachments/assets/86e2ecc4-3f7d-4a12-adb7-d69e23a6021e" />
 
 
 Creem una carpeta per l'usuari dins de homes tambe amb permisos 777 i nobody nogroup
 
+<img width="546" height="132" alt="image" src="https://github.com/user-attachments/assets/ad171598-85ee-482e-b155-dbb0f8269ec5" />
 
 
 Modifiquem el fitxer fstab 
