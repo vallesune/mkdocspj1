@@ -767,15 +767,26 @@ reiniciem el servei de nfs
 
 Creem una carpeta /homes i li modifiquem permisos a 777 i nobody nogroup
 
+
+
 Creem una carpeta per l'usuari dins de homes tambe amb permisos 777 i nobody nogroup
+
+
 
 Modifiquem el fitxer fstab 
 
-Reiniciem la maquina 
+<img width="877" height="296" alt="Captura de pantalla de 2026-02-10 13-57-53" src="https://github.com/user-attachments/assets/40602b06-3cad-468a-90e1-0b34f496b9e5" />
 
-Iniciem amb un altre client i utilitzem l'usuari i contrasenya del usuari del ldap
+
+Reiniciem la maquina i iniciem sessio amb un altre client i utilitzem l'usuari i contrasenya del usuari del ldap
+
+<img width="360" height="225" alt="Captura de pantalla de 2026-02-19 12-00-28" src="https://github.com/user-attachments/assets/9bcdf16e-610c-4044-9d91-f11be783d4bd" />
+
 
 Comprovem que la home s'ha creat a homes 
+
+<img width="539" height="137" alt="Captura de pantalla de 2026-02-19 12-02-15" src="https://github.com/user-attachments/assets/e176e4b7-3cd0-43e4-92de-0bcf5edb57a4" />
+
 
 Per ultim tornem al server a comprovar que s'han creat tambe les carpetes 
 
