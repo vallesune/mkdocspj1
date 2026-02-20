@@ -719,19 +719,48 @@ Per ultim des del buscador d'arxius podem buscar per la ip del server i la carpe
 
 #### Part Servidor
 
-Llimpiem la base de dades de ldap (reconfigure)
+Llimpiem la base de dades de ldap
+
+<img width="738" height="143" alt="Captura de pantalla de 2026-02-19 12-23-53" src="https://github.com/user-attachments/assets/2489c21b-8e28-4cb9-a730-ed0c67aeefba" />
+
+<img width="697" height="185" alt="Captura de pantalla de 2026-02-19 12-23-22" src="https://github.com/user-attachments/assets/c74efdb8-5d26-4d84-8976-284478cfc580" />
+
+<img width="518" height="280" alt="Captura de pantalla de 2026-02-19 12-24-53" src="https://github.com/user-attachments/assets/afb94b48-4cd3-4113-8627-5a251961983a" />
+
 
 Tornem a afegir un grup 
 
+<img width="469" height="162" alt="Captura de pantalla de 2026-02-19 12-25-16" src="https://github.com/user-attachments/assets/e8ed003b-02f0-4a3e-b3c3-3db89e0f07f9" />
+
+<img width="735" height="80" alt="image" src="https://github.com/user-attachments/assets/ce7cd415-0f89-4772-a807-e165bff0de0c" />
+
+
 I l'usuari que utilitzarem
 
-Creem la carpeta /homes per centralitzar les homes dels usuaris ldap
+<img width="451" height="397" alt="Captura de pantalla de 2026-02-19 12-25-31" src="https://github.com/user-attachments/assets/3a2d79c5-e102-497f-8ea0-246d84229912" />
 
-cambiem permisos a 777 i nobody nogroup
+<img width="733" height="90" alt="image" src="https://github.com/user-attachments/assets/4185a7af-66ed-4555-bfbd-42dbde46da8f" />
+
+
+Creem la carpeta /homes per centralitzar les homes dels usuaris ldap i li cambiem permisos a 777 i nobody nogroup
+
+<img width="597" height="120" alt="Captura de pantalla de 2026-02-19 12-28-44" src="https://github.com/user-attachments/assets/9a05a672-a316-4b89-9b36-cf839f9ece5e" />
+
+
+Creem dins de homes la carpeta del usuari amb els mateixos permisos
+
+<img width="513" height="153" alt="Captura de pantalla de 2026-02-19 12-28-54" src="https://github.com/user-attachments/assets/6184ae2c-e48a-4df7-bf73-9940d3804146" />
+
 
 modifiquem el fitxer exports 
 
+<img width="732" height="265" alt="Captura de pantalla de 2026-02-19 12-29-15" src="https://github.com/user-attachments/assets/a29014ad-7e87-4741-9662-5e7ef164acad" />
+
+
 reiniciem el servei de nfs
+
+<img width="729" height="274" alt="image" src="https://github.com/user-attachments/assets/d3098a5b-0cc4-4131-a006-a35432200378" />
+
 
 
 #### Part Client
