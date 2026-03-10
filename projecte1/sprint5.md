@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Sprint 5.Logs"
-permalink: projecte1/sprint3/
+permalink: projecte1/sprint5/
 ---
 
 ## 1. Logs
