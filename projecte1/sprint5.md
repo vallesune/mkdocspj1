@@ -197,11 +197,55 @@ Aquest tipus de configuració és molt utilitzada en **infraestructures de siste
 
 ## Actualitzacions centralitzades
 
+servidor actualitzacions explic...
+
 ### Server
 
-jjj
+Instalem apache2 i ap-mirror
+(cap)
+
+Modifiquem el fitcher mirror.list
+
+<img width="1191" height="612" alt="image" src="https://github.com/user-attachments/assets/7d3cf9ca-3472-4ee5-b032-44265f8aef46" />
+
+
+Per actualitzarlo fem un apt-mirror
+
+<img width="1215" height="274" alt="image" src="https://github.com/user-attachments/assets/b3c0dffe-cee3-46d6-a65c-000e34563083" />
+
+
+Despres comprovem que el paquet es troba al mirror spool
+
+<img width="629" height="57" alt="image" src="https://github.com/user-attachments/assets/2b87e096-7715-4844-9d34-0b33e9f10663" />
+
+
+Creem un soft link de la carpeta del spool a /var/www/html
+
+<img width="965" height="44" alt="image" src="https://github.com/user-attachments/assets/62ee42f5-ef11-4765-a414-c95730edbc9b" />
+
 
 
 ### Client
 
-ssss
+Modifiquem el fitxer sources.list i afegim el repositori del servidor
+
+<img width="736" height="386" alt="image" src="https://github.com/user-attachments/assets/a8828e59-19a7-4835-984a-4166fd286bb4" />
+
+Afegim una key per al docker
+
+<img width="962" height="78" alt="image" src="https://github.com/user-attachments/assets/e325e14c-0faa-419e-a490-404093dfda4f" />
+
+
+Fem un update
+
+<img width="741" height="223" alt="image" src="https://github.com/user-attachments/assets/9259253d-3e94-48d9-a7a3-f1cadb8469af" />
+
+
+Provem d'instalar el paquet i veiem que s'instala del servidor
+
+<img width="1284" height="447" alt="image" src="https://github.com/user-attachments/assets/12f5339d-6413-4f9e-84d7-1e13921ab206" />
+
+Provem a executar el programa i funciona
+
+<img width="409" height="48" alt="image" src="https://github.com/user-attachments/assets/65516802-cec8-456c-a2df-78a74fb64e88" />
+
