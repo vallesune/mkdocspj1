@@ -191,3 +191,17 @@ Això permet que un servidor rebi i emmagatzemi els registres de múltiples màq
 Aquest tipus de configuració és molt utilitzada en **infraestructures de sistemes i xarxes** per tenir un control centralitzat de tots els esdeveniments del sistema.
 
 ---
+
+
+
+
+## Actualitzacions centralitzades
+
+### Server
+
+jjj
+
+
+### Client
+
+ssss
