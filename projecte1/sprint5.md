@@ -202,7 +202,11 @@ servidor actualitzacions explic...
 ### Server
 
 Instalem apache2 i ap-mirror
-(cap)
+
+<img width="752" height="228" alt="Captura de pantalla de 2026-03-12 13-08-50" src="https://github.com/user-attachments/assets/faffbcc4-e1c7-43a1-848c-121eaccf348d" />
+
+<img width="752" height="228" alt="Captura de pantalla de 2026-03-12 13-09-10" src="https://github.com/user-attachments/assets/2f4bc849-c896-49e2-8e50-60dd5e48fbb3" />
+
 
 Modifiquem el fitcher mirror.list
 
