@@ -144,4 +144,34 @@ Només desa els canvis realitzats des de la darrera copia (completa o incrementa
 Còpia diferencial
 Desa tots els canvis realitzats des de la darrera còpia completa. Ocupa més espai que la incremental, però és més senzilla de restaurar, ja que només en necessita la còpia completa i l'última diferencial.
 
+En sistemes Linux hi ha diferents ordres de terminal per copiar informació, cadascun orientat a un nivell diferent de còpia i ús. 
 
+	'cp' Copia fitxers i directoris a nivell de sistema de fitxers. És senzill i adequat per a còpies puntuals, però no està pensat per a còpies de seguretat ni per clonar discos.
+
+	'rsync' Sincronitza fitxers i directoris copiant només els canvis realitzats. És eficient, conserva permisos i es fa servir habitualment per a còpies de seguretat i replicació de dades.
+
+	'dd' Realitza còpies a nivell de bloc, clonant discos o particions de forma exacta. Inclou tot el contingut, fins i tot l'espai buit, i cal utilitzar-lo amb precaució.
+
+Tambe existeixen opcions grafiques com deja-dup que podem instalar
+
+
+### Automatizacio amb scripts de les copies de seguretat
+
+Podem automatizar el proces de crear una copia de seguretat amb scripts i eines com cron o anacron
+
+Cron
+Es fa servir per programar tasques en una data i hora concretes. Funciona únicament si el sistema està encès al moment programat, per la qual cosa és ideal per a tasques específiques i recurrents d'usuaris, com ara còpies de seguretat o execucions programades.
+
+Les tasques de cron poden configurar-se de forma global al fitxer /etc/crontab, que afecta tots els usuaris, o de forma individual mitjançant l'ordre crontab per a cada usuari.
+
+A més, al directori /etc/ hi ha carpetes com cron.daily, cron.weekly i cron.monthly, que faciliten l'execució automàtica de scripts segons la seva periodicitat.
+
+
+Anacron
+Permet executar tasques periòdiques (diàries, setmanals, mensuals), encara que el sistema estigui apagat en el moment previst. És especialment útil per a tasques de manteniment del sistema.
+
+Primer creem un petit script indicant el bash, un timestamp de la data actual i un tar de la carpeta descarges
+
+Si volem que l'script s'executi en un moment concret utilitzant crontab editem /etc/crontab i indiquem com es veu el minut i la hora, l'usuari que executa i la comanda que sera l'execucio de l'script
+
+Per automatitzar l'execucio diaria amb anacron copiarem l'script al directori /etc/cron.dialy sense l'extensio .sh i modificarem l'arxiu /etc/anacrontab per a que els cron diaris s'executin un minut despres d'enjegar la maquina
