@@ -98,6 +98,40 @@ Per modificar el contingut d'aquests fitxers, o per modificar algun parametre d'
 
 Algunes comandes basiques per crear o modificar usaris son:
 		
-		'adduser' per crear un usuari de manera automatica, unicament introduim el nom de l'usuari i la password al moment i ens crea la carpeta home i els permisos automaticament
+		Crear usuaris o grups:
+		
+		'adduser' per crear un usuari de manera automatica, unicament introduim el nom de l'usuari i la password al moment i ens crea la carpeta home i els permisos automaticament.
 
 		`useradd` s'utilitza tambe per crear usuaris pero de manera manual, despres de crearlo hem de configurarli la contrasenya, la home i si volem tambe el shell ja que no ve en bash per defecte.
+
+		'addgroup' serveix per crear un grup. 
+
+
+		Modificar usuaris o grups:
+
+		'usermod' permet modifcar usuaris per exemple per bloquejarlos
+
+		'groupmod' permet modificar un grup, per exemple canviarli el nom
+
+
+		Eliminar usuaris o grups:
+
+		'userdel'
+
+		'deluser'
+
+		'groupdel'
+
+
+		Afegir un usuari a un grup:
+
+		'adduser usuari grup'
+
+		'gpasswd -a usuari grup'
+
+		'usermod -a -G grup usuari'
+
+## 3. Copies de seguretat
+
+
+
