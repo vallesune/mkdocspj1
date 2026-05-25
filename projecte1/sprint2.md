@@ -175,3 +175,14 @@ Primer creem un petit script indicant el bash, un timestamp de la data actual i 
 Si volem que l'script s'executi en un moment concret utilitzant crontab editem /etc/crontab i indiquem com es veu el minut i la hora, l'usuari que executa i la comanda que sera l'execucio de l'script
 
 Per automatitzar l'execucio diaria amb anacron copiarem l'script al directori /etc/cron.dialy sense l'extensio .sh i modificarem l'arxiu /etc/anacrontab per a que els cron diaris s'executin un minut despres d'enjegar la maquina
+
+
+## 4. Quotes de disc i d'usuari
+
+A Ubuntu, les quotes de disc permeten limitar lespai demmagatzematge que pot utilitzar cada usuari o grup. Això ajuda a controlar lús del disc i evitar que un sol usuari ocupi tots els recursos disponibles del sistema.
+
+Per configurar quotes en un disc primer amb la mv tancada afegirem dos discos
+
+Despres instalarem el paquet quota en apt
+
+
