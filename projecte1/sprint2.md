@@ -133,5 +133,15 @@ Algunes comandes basiques per crear o modificar usaris son:
 
 ## 3. Copies de seguretat
 
+Hi ha diferents tipus de còpies segons la quantitat de dades que es guarden i la relació amb còpies anteriors.
+
+Còpia completa
+Desa totes les dades seleccionades a cada execució. És l'opció més segura i senzilla de restaurar, encara que requereix més temps i espai d'emmagatzematge.
+
+Còpia incremental
+Només desa els canvis realitzats des de la darrera copia (completa o incremental). És ràpida i ocupa poc espai, però la restauració requereix còpia completa i totes les incrementals posteriors.
+
+Còpia diferencial
+Desa tots els canvis realitzats des de la darrera còpia completa. Ocupa més espai que la incremental, però és més senzilla de restaurar, ja que només en necessita la còpia completa i l'última diferencial.
 
 
