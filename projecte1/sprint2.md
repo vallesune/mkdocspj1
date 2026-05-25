@@ -6,7 +6,7 @@ permalink: projecte1/sprint2/
 
 ## 1. Sistemes de fitxers i particions
 
-intro
+A Ubuntu, les particions i els sistemes de fitxers són essencials per organitzar i gestionar l'emmagatzematge. Les particions divideixen el disc en espais independents, mentre que els sistemes de fitxers permeten emmagatzemar i accedir a la informació de manera eficient.
 
   Particions i volums
 
@@ -97,4 +97,7 @@ La gestió d'usuaris i grups a Linux es basa principalment en quatre fitxers del
 Per modificar el contingut d'aquests fitxers, o per modificar algun parametre d'usuaris, grups, contrasenyes, no hem de modificar directament el contingut dels fitxers, sino utilitzar comandes, ja que podem provocar errors de sintaxi o corrupcio.
 
 Algunes comandes basiques per crear o modificar usaris son:
-		adduser
+		
+		'adduser' per crear un usuari de manera automatica, unicament introduim el nom de l'usuari i la password al moment i ens crea la carpeta home i els permisos automaticament
+
+		`useradd` s'utilitza tambe per crear usuaris pero de manera manual, despres de crearlo hem de configurarli la contrasenya, la home i si volem tambe el shell ja que no ve en bash per defecte.
