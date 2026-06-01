@@ -506,6 +506,11 @@ En sistemes Linux hi ha diferents ordres de terminal per copiar informació, cad
 
 Tambe existeixen opcions grafiques com deja-dup que podem instalar
 
+<img width="714" height="147" alt="Captura de pantalla de 2025-12-18 09-28-57" src="https://github.com/user-attachments/assets/17a7defb-6388-45c1-a0a5-5cea2dfc252d" />
+
+<img width="766" height="447" alt="Captura de pantalla de 2025-12-18 09-32-06" src="https://github.com/user-attachments/assets/9cc272c1-e95a-42a6-a6f3-b286573b2704" />
+
+
 
 ### Automatizacio amb scripts de les copies de seguretat
 
@@ -522,11 +527,29 @@ A més, al directori /etc/ hi ha carpetes com cron.daily, cron.weekly i cron.mon
 Anacron
 Permet executar tasques periòdiques (diàries, setmanals, mensuals), encara que el sistema estigui apagat en el moment previst. És especialment útil per a tasques de manteniment del sistema.
 
+
+Prova practica
+
 Primer creem un petit script indicant el bash, un timestamp de la data actual i un tar de la carpeta descarges
+
+<img width="842" height="188" alt="Captura de pantalla de 2025-12-18 09-55-53" src="https://github.com/user-attachments/assets/f7da5dd7-dc41-4c21-a29f-a7993b792665" />
+
 
 Si volem que l'script s'executi en un moment concret utilitzant crontab editem /etc/crontab i indiquem com es veu el minut i la hora, l'usuari que executa i la comanda que sera l'execucio de l'script
 
+CAMBIARCAP
+
+<img width="991" height="422" alt="Captura de pantalla de 2025-12-18 09-54-03" src="https://github.com/user-attachments/assets/908802b0-ce38-4e3a-abca-4a0d4f6d5183" />
+
+
 Per automatitzar l'execucio diaria amb anacron copiarem l'script al directori /etc/cron.dialy sense l'extensio .sh i modificarem l'arxiu /etc/anacrontab per a que els cron diaris s'executin un minut despres d'enjegar la maquina
+
+<img width="585" height="31" alt="Captura de pantalla de 2025-12-18 10-04-48" src="https://github.com/user-attachments/assets/bf3e269c-c0cc-4781-8ad3-d5f258380ec8" />
+
+<img width="533" height="219" alt="Captura de pantalla de 2025-12-18 10-05-12" src="https://github.com/user-attachments/assets/87df67b6-d933-4641-a51b-cea5990e40a3" />
+
+<img width="750" height="318" alt="Captura de pantalla de 2025-12-18 14-21-25" src="https://github.com/user-attachments/assets/1a0d5baf-c216-4b4d-a54d-c54aa1070555" />
+
 
 
 ## 4. Quotes de disc i d'usuari
@@ -535,29 +558,62 @@ A Ubuntu, les quotes de disc permeten limitar lespai demmagatzematge que pot uti
 
 Per configurar quotes en un disc primer amb la mv tancada afegirem un disc
 
+<img width="422" height="282" alt="Captura de pantalla de 2026-06-01 16-24-38" src="https://github.com/user-attachments/assets/5f334bf1-ba06-4d8e-879e-0b39b77f0d7d" />
+
 Despres instalarem el paquet quota en apt
+
+<img width="742" height="275" alt="Captura de pantalla de 2026-06-01 04-26-57" src="https://github.com/user-attachments/assets/68fd3de8-c909-4b71-a403-63ed3a056147" />
 
 Crearem una particio de tot el disc i la formatarem en ext4
 
+<img width="567" height="223" alt="Captura de pantalla de 2026-06-01 16-33-51" src="https://github.com/user-attachments/assets/6de80e0b-f2b0-47b9-a463-96dde896c71b" />
+
+<img width="589" height="220" alt="Captura de pantalla de 2026-06-01 04-38-38" src="https://github.com/user-attachments/assets/218c9690-dec0-4afa-8d21-f8693b79fb89" />
+
 Creem una carpeta de proves
+
+<img width="390" height="44" alt="Captura de pantalla de 2026-06-01 16-33-22" src="https://github.com/user-attachments/assets/93974fe4-87ab-476b-b4be-90835e10fd22" />
 
 Montem la particio a la carpeta que acabem de crear en fstab, donantli tambe permisos de quotes
 
+<img width="718" height="279" alt="Captura de pantalla de 2026-06-01 16-35-40" src="https://github.com/user-attachments/assets/9123716b-1afc-4112-933b-ef45913f605a" />
+
 Reiniciem la maquina i a la carpeta de proves esta montat correctament
+
+<img width="371" height="71" alt="Captura de pantalla de 2026-06-01 16-40-49" src="https://github.com/user-attachments/assets/4d0a1fdc-f2f0-454c-a195-45969e32b7dd" />
 
 Pasem a activar els fitxers de quota en quotacheck i activarles en quotaon
 
+<img width="596" height="93" alt="Captura de pantalla de 2026-06-01 16-42-23" src="https://github.com/user-attachments/assets/ebbd3446-088d-4b56-b101-2b25d3ca73b9" />
+
 Crearem un user de prova 
+
+<img width="505" height="332" alt="Captura de pantalla de 2026-06-01 16-43-28" src="https://github.com/user-attachments/assets/04e3fa2b-a071-4ebb-ba2c-2a26734e67e4" />
 
 Definim la quota soft i la hard (explicar diferencia?)
 
 En edquota -u li asignem les quotes al usuari (-u user1)(s'obri learxiu este)
 
+<img width="590" height="87" alt="Captura de pantalla de 2026-06-01 16-55-59" src="https://github.com/user-attachments/assets/8337c2e7-025c-4737-96c8-18b627264303" />
+
 En repquota comprovem les cuotes de tots els usuaris al disc (repquota /dev/sdc1)
+
+<img width="653" height="170" alt="Captura de pantalla de 2026-06-01 17-32-42" src="https://github.com/user-attachments/assets/751e1256-863e-41e5-9286-56030fe75091" />
 
 En quota -u comprovem les quotes del usuari
 
-Podem provar que la quota funciona afegint fitxers i comprovem que mentres no superem el limit es creen sense problemes, pero que cuan el superem es creen buits (dd if...)
+<img width="746" height="89" alt="Captura de pantalla de 2026-06-01 17-30-59" src="https://github.com/user-attachments/assets/352f8ad6-5d73-41b9-a234-27b930c6f893" />
+
+
+Podem provar que la quota funciona afegint fitxers i comprovem que mentres no superem el limit es creen sense problemes, pero que cuan el superem es creen buits
+
+Creem el primer fitxer que pesa tota la mida que li hem assignat
+
+<img width="745" height="104" alt="Captura de pantalla de 2026-06-01 17-30-51" src="https://github.com/user-attachments/assets/b9d95259-42e0-45b0-b2a9-a30ce0ee325f" />
+
+En canvi cuan ja superem el soft i despres arribem al limit podem veure com es redueix la mida i finalment es crea buit
+
+<img width="746" height="269" alt="Captura de pantalla de 2026-06-01 17-32-08" src="https://github.com/user-attachments/assets/3fa89377-96d8-41f2-99e5-8682014496da" />
 
 
 
