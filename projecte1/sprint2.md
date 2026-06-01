@@ -99,25 +99,50 @@ Per modificar el contingut d'aquests fitxers, o per modificar algun parametre d'
 
 Algunes comandes basiques per crear o modificar usaris son:
 		
-		Crear usuaris o grups:
+		> Crear usuaris o grups:
 		
 		'adduser' per crear un usuari de manera automatica, unicament introduim el nom de l'usuari i la password al moment i ens crea la carpeta home i els permisos automaticament.
 
+		<img width="741" height="319" alt="Captura de pantalla de 2026-06-01 17-37-37" src="https://github.com/user-attachments/assets/f1c7cc16-2e89-453e-8f46-f4726c3e52ed" />
+
 		`useradd` s'utilitza tambe per crear usuaris pero de manera manual, despres de crearlo hem de configurarli la contrasenya, la home i si volem tambe el shell ja que no ve en bash per defecte.
+
+		Primer creem l'usuari, li assignem una password i creem la carpeta home amb el mateix nom
+		
+		<img width="518" height="151" alt="Captura de pantalla de 2026-06-01 17-43-23" src="https://github.com/user-attachments/assets/94adb86b-bf13-419f-ae8d-34122a19578d" />
+
+		Despres assegurem permisos fent propietari de la home al usuari
+		
+		<img width="523" height="138" alt="Captura de pantalla de 2026-06-01 17-43-36" src="https://github.com/user-attachments/assets/03ecb5b4-46b6-4c03-808d-d8c0acd30f7d" />
+
+		Per ultim com en useradd el shell que ve per defecte es sh podem canviarlo a bash
+		
+		<img width="573" height="108" alt="Captura de pantalla de 2026-06-01 18-07-57" src="https://github.com/user-attachments/assets/39dbc151-2fe6-48b3-9c71-3436d3bf6202" />
 
 		'addgroup' serveix per crear un grup. 
 
+		<img width="413" height="77" alt="Captura de pantalla de 2026-06-01 17-43-01" src="https://github.com/user-attachments/assets/30709e91-029b-4445-ac69-b99fd3176ef8" />
 
-		Modificar usuaris, grups o contraseñes:
 
-		'usermod' permet modifcar usuaris per exemple per bloquejarlos
+		> Modificar usuaris, grups o contraseñes:
+
+		'usermod' permet modifcar usuaris per exemple per bloquejarlos. Podem comprovar que un usuari esta bloquejat si al shadow apareix el simbol "!".
+
+		Per bloquejar utilitzem -L i per desbloquejar -U
+
+		<img width="515" height="102" alt="Captura de pantalla de 2026-06-01 17-46-12" src="https://github.com/user-attachments/assets/750d3874-a8e4-42eb-9edc-d40539c3598a" />
+
+		<img width="576" height="77" alt="Captura de pantalla de 2026-06-01 17-47-26" src="https://github.com/user-attachments/assets/4b62f046-8ff8-414f-8973-ff5f7cdde1b5" />
+
 
 		'groupmod' permet modificar un grup, per exemple canviarli el nom
+
+		<img width="515" height="102" alt="Captura de pantalla de 2026-06-01 17-45-02" src="https://github.com/user-attachments/assets/0a2fe4e2-96c5-4724-a9be-e9d39cb9c4a2" />
 
 		'change' permet afegir una caducitat a les contrasenyes
 		
 
-		Eliminar usuaris o grups:
+		> Eliminar usuaris o grups:
 
 		'userdel'
 
@@ -126,24 +151,46 @@ Algunes comandes basiques per crear o modificar usaris son:
 		'groupdel'
 
 
-		Afegir un usuari a un grup:
+		> Afegir un usuari a un grup:
 
 		'adduser usuari grup'
 
 		'gpasswd -a usuari grup' (afegig user grup com secundari tipo apend) (-A hace al user admin de ese grupo)
-		
+
+		<img width="487" height="53" alt="Captura de pantalla de 2026-06-01 17-47-55" src="https://github.com/user-attachments/assets/3b0683d8-d054-47a8-8d67-806457edd94a" />
+
 		'usermod -a -G grup usuari' (-a lo mismo i la -G es para modif el grupo principal del user q de primeras es el q se crea auto igual q el nombre del usu)
 
-		Modifiquem el nom d'usuari funcionalment:
+		> Modifiquem el nom d'usuari funcionalment:
 		
 		'usermod -l' (nounom anticnom) per canviar l'user
+
+		<img width="508" height="33" alt="Captura de pantalla de 2026-06-01 18-24-13" src="https://github.com/user-attachments/assets/2ed63e25-a535-4782-920d-66551011b2b4" />
+
 		canviar nom de carpeta home mv /home/ant ''/nou
+
+		<img width="431" height="110" alt="Captura de pantalla de 2026-06-01 18-24-36" src="https://github.com/user-attachments/assets/234fba68-dd4c-48ef-99c7-dffc53074595" />
+
 		usermod -d /home/nou per a q la home del user sigui la nova 
-		id user com per info del user
+
+		<img width="546" height="32" alt="Captura de pantalla de 2026-06-01 18-25-37" src="https://github.com/user-attachments/assets/0c2955f5-9516-460e-bc1d-1c3018256120" />
+
 		groupmod -n nounom anti canvia el nom del grup del user
+
+		<img width="492" height="30" alt="Captura de pantalla de 2026-06-01 18-27-58" src="https://github.com/user-attachments/assets/37131f4b-a93c-420b-9a39-120cb5317ffa" />
+
 		comprov rapid de id, cat passwd, group que estan correct 
+
+		<img width="903" height="267" alt="Captura de pantalla de 2026-06-01 18-28-07" src="https://github.com/user-attachments/assets/bcdcf62c-d1bd-4882-a480-6896a007f7f4" />
+
 		iniciar grafico con el user (deveria func)
+
+		<img width="360" height="263" alt="Captura de pantalla de 2026-06-01 18-29-16" src="https://github.com/user-attachments/assets/59d28481-d6f8-4a90-8189-920c876dc39e" />
+
 		abrir term i poner whoaim para la cap
+
+		<img width="473" height="97" alt="Captura de pantalla de 2026-06-01 18-31-40" src="https://github.com/user-attachments/assets/bc0fcadb-874b-40d3-b96d-26b25bb2759d" />
+
 
 
 ### Fitxers de Configuracio 
