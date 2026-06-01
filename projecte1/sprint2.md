@@ -174,6 +174,48 @@ export HISTCONTROL=ignoredups:erasedups
 
 Cambiar el bash por defecto(en los add), el uid(en los add), el temps contraseña(en login)
 
+Para modificar els fitxers o contingut de la carpeta skel no podem ferho desde la terminal grafica, sino que hem d'utilitzar una tty nativa a la que podem entrar en Fn+Fx 
+
+Modificar alguna cosa de cada fitx (bashrc,logout i prof)
+al prf per exempe pdem fer que la home no es cree a /home si no a cualsevol altre dir (?) nosesiesaqui
+
+En useradd conf podemos hacer qe se automatize
+automatitzar useradd
+en los fitxers q faig falta
+primera vez q inicia gradficament  q te demano cambiar contra(posibilitat)
+antes caldria un passwor per defecte (com 123) per evitar interaccio
+q se cree la home i todo lo q haciamos manualmente
+config utiles para cuando se execute el comando
+
+practicas del sp pasado?
+equivale a los ex 29 y 30
+softlink hardlink
+ln (-s es soft sesne es hard)
+ln -s /tmp /etc/skel/enllas
+nano etc login.defs (conf login i contrasenyes)
+
+etc adduser.conf
+(bash cambiat sh)
+(home a /tmp)
+cambiat lo de primer uid no 1000 cambiat a 2000
+directori
+etc skel
+
+etc default useradd
+sh per bash
+
+etc profile
+alias pwd = /var
+
+esto es de lo q seria la act 31:
+els fitxers .bash i profile no es modifiquen en pseudoterminal(la de grafica) S’han de fer ter tty
+carpeta /etc/skel sense ocult no te res pero en ocult te els .prof i .bash que si es modifiquen aqui a partir del
+proxim user es crearan amb la conf d’aqui i aixi no s’a de modificar indiv
+si es crea algo a la carpeta skel (carpetes, archius lo q sea) es creara /copiara als nous users
+pwd para saver en q carpeta estas
+com que a la etc skel es per a tots els users se pot usar variables
+
+
 
 ### Gestio de permisos
 ultimo dia hicimos permisos (777,rw,stiky…) hacer lo mismo q el año pasado
@@ -184,6 +226,60 @@ especials
 acl
 mascara
 
+permisos normals
+permisos especials
+llistes control access(acl)
+umask
+
+perm nomals
+(en un ls -l)
+3 primeres lletres sosn del user(propietari)(menos la q es realment primera q indica el tipus d per directori - per fitxer …)
+los 3 despues son los q formen part del grup
+i los ulktims tres son per nose los q no formen del grup ni son propiet (invitats, altres)
+lo grup q apareix es sempre el principal del user propietari
+chgrp per el grup
+chmod per permisos
+chown per propietari
+r read w write x executar
+
+permisos especials
+sticky(util per 
+suid(util per a scripts )
+sgid(no utilitat segons profe)
+
+s(suid)   z(guid)    t(stiky)
+
+chmod 1(777) carpeta
+777 representa los permisos q pondrias a esa carp archivo lo q sea q pueden ser 777 o lo q sea i el uno delante es para activar el sticky
+
+
+apunts acl
+getfacl carp/
+dona un resumdls permisos
+ls -l en un + indica acl defini
+
+setfacl -m(-m per a idicar despues si es user o grup) user:nomuser:permisos a donar carp/ (captures en exemple)
+setfacl -b carp/ (elimina les acl de la carp indicada)(totes de tots los users i tal)
+setfacl -x user carp/ (elimina unicament les acl de un user)
+
+apunts umask
+sudo nano /etc/login.defs (umask)
+
+directori->777 (111 111 111)
+arxiu -> 666 (110 110 110)
+
+/etc/login.devs -> umask 0022 = root
+umask (num) - canvia la mascara temporalment(si reinicies se perd)
+
+comenta utilitat mascara 
+
+prova practica
+per a les proves hem creat los de blau verd roig i groc el grup parchis i inicialment ara tenim los blau i verd al grup parchis pero lo groc i roig nop
+
+pr al ub24 ha cambiat en lo 22 i per a coses de chown i noseq sobre un grup 
+per a utilitzar chgrp i ficar un grup del q el user no forma part (parchis / groc) no se si sea por eso o q en general pero para eso necesita sudo si no no deja
+
+per a un ch-loqsea de un directori fiquem -R per q s’aplico a tot lo d dins
 
 
 
