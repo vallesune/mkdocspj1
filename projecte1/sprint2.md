@@ -74,10 +74,11 @@ A Ubuntu, les particions i els sistemes de fitxers són essencials per organitza
 
 ## 2. Gestio d'usuaris, grups i permisos
 
+### Gestio d'usuaris i grups
+
 Un usuari dins d'un equip es una entitat que representa normalment a una unica persona i que s'idenitfica per un nom i uid.
 
 Un grup es un conjunt d'usuaris agrupats per que comparteixen permisos.
-
 
 La gestió d'usuaris i grups a Linux es basa principalment en quatre fitxers del sistema, ubicats a /etc, que emmagatzemen la informació essencial per identificar usuaris, assignar-los a grups i controlar l'accés al sistema.
 
@@ -107,12 +108,14 @@ Algunes comandes basiques per crear o modificar usaris son:
 		'addgroup' serveix per crear un grup. 
 
 
-		Modificar usuaris o grups:
+		Modificar usuaris, grups o contraseñes:
 
 		'usermod' permet modifcar usuaris per exemple per bloquejarlos
 
 		'groupmod' permet modificar un grup, per exemple canviarli el nom
 
+		'change' permet afegir una caducitat a les contrasenyes
+		
 
 		Eliminar usuaris o grups:
 
@@ -127,9 +130,62 @@ Algunes comandes basiques per crear o modificar usaris son:
 
 		'adduser usuari grup'
 
-		'gpasswd -a usuari grup'
+		'gpasswd -a usuari grup' (afegig user grup com secundari tipo apend) (-A hace al user admin de ese grupo)
+		
+		'usermod -a -G grup usuari' (-a lo mismo i la -G es para modif el grupo principal del user q de primeras es el q se crea auto igual q el nombre del usu)
 
-		'usermod -a -G grup usuari'
+		Modifiquem el nom d'usuari funcionalment:
+		
+		'usermod -l' (nounom anticnom) per canviar l'user
+		canviar nom de carpeta home mv /home/ant ''/nou
+		usermod -d /home/nou per a q la home del user sigui la nova 
+		id user com per info del user
+		groupmod -n nounom anti canvia el nom del grup del user
+		comprov rapid de id, cat passwd, group que estan correct 
+		iniciar grafico con el user (deveria func)
+		abrir term i poner whoaim para la cap
+
+
+### Fitxers de Configuracio 
+jjj
+adduser i useradd utiltizen els fitxers de configuracio de /etc/skel al moment de crear un usuari, si modifiquem aquests fitxers podem fer que els usuaris que es creen despres tinguin aquesta configuracio per defecte, mes efectiu que tenir que modificar cada usuari despres de crearlo. Igualment si afegim algun fitxer o carpeta al skel es copiaran als nous usuaris sense tenir que indicarho a cap fitxer.
+
+En cas de que vulgem modificar la configuracio d'un usuari ja creat es creen els mateixos fitxers dins la carpeta home de cada usuari, per tan els podem modificar desde alli.
+
+Tambe podem modificar el que fan les comandes adduser i user add desde 
+/etc/adduser.conf
+/etc/default/useradd
+
+fitx /etc/login.defs ??
+
+Los tres fitxeros de etc skel son
+explicar los bash i prof de skel
+bash_logout tanca sesio
+.bashrc interpret
+.profile inici sesio
+
+
+Exemplos de canvios de config: ?
+# Habilitar colores en el prompt
+export LS_COLORS='di=1;34:ln=36:so=35:pi=33:ex=32:bd=1;33:cd=1;33:su=37:sg=30:tw=30:ow=34'
+export EDITOR=nano
+export HISTSIZE=2000
+export HISTCONTROL=ignoredups:erasedups
+
+Cambiar el bash por defecto(en los add), el uid(en los add), el temps contraseña(en login)
+
+
+### Gestio de permisos
+ultimo dia hicimos permisos (777,rw,stiky…) hacer lo mismo q el año pasado
+
+cosas de permisos q entran
+ugo
+especials
+acl
+mascara
+
+
+
 
 ## 3. Copies de seguretat
 
@@ -181,8 +237,31 @@ Per automatitzar l'execucio diaria amb anacron copiarem l'script al directori /e
 
 A Ubuntu, les quotes de disc permeten limitar lespai demmagatzematge que pot utilitzar cada usuari o grup. Això ajuda a controlar lús del disc i evitar que un sol usuari ocupi tots els recursos disponibles del sistema.
 
-Per configurar quotes en un disc primer amb la mv tancada afegirem dos discos
+Per configurar quotes en un disc primer amb la mv tancada afegirem un disc
 
 Despres instalarem el paquet quota en apt
+
+Crearem una particio de tot el disc i la formatarem en ext4
+
+Creem una carpeta de proves
+
+Montem la particio a la carpeta que acabem de crear en fstab, donantli tambe permisos de quotes
+
+Reiniciem la maquina i a la carpeta de proves esta montat correctament
+
+Pasem a activar els fitxers de quota en quotacheck i activarles en quotaon
+
+Crearem un user de prova 
+
+Definim la quota soft i la hard (explicar diferencia?)
+
+En edquota -u li asignem les quotes al usuari (-u user1)(s'obri learxiu este)
+
+En repquota comprovem les cuotes de tots els usuaris al disc (repquota /dev/sdc1)
+
+En quota -u comprovem les quotes del usuari
+
+Podem provar que la quota funciona afegint fitxers i comprovem que mentres no superem el limit es creen sense problemes, pero que cuan el superem es creen buits (dd if...)
+
 
 
