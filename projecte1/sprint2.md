@@ -166,7 +166,8 @@ bash_logout tanca sesio
 
 
 Exemplos de canvios de config: ?
-# Habilitar colores en el prompt
+
+Habilitar colores en el prompt
 export LS_COLORS='di=1;34:ln=36:so=35:pi=33:ex=32:bd=1;33:cd=1;33:su=37:sg=30:tw=30:ow=34'
 export EDITOR=nano
 export HISTSIZE=2000
@@ -214,6 +215,29 @@ proxim user es crearan amb la conf d’aqui i aixi no s’a de modificar indiv
 si es crea algo a la carpeta skel (carpetes, archius lo q sea) es creara /copiara als nous users
 pwd para saver en q carpeta estas
 com que a la etc skel es per a tots els users se pot usar variables
+
+jjj
+
+modificaciones echas en skel bashrc bashlogout profile adduser useradd logindefs
+
+1. carpeta skel añadimos carpeta prova per que es cree junt en la resta de fitxers al crear l'user
+2.bashrc creem un alias per q el pugen usar los nous users
+3.bash_logout borrar el contingut d'una carpeta temporal i missatge de sortida i/o log de tancat sessio
+4.profile afegir missatge de benvinguda
+5.adduser modifiquem uid i canviar permisos per defecte de la carpeta creada home
+6.useradd modif shell per def (de sh a bash) i alguna cosa com el uid max min
+7.logins modif la caducitat de les contrasenyes
+
+
+2. alias ll='l -lah'
+3.rm -rf "$HOME/temporal" /*  echo "Adeu!" echo "$(date) - $USER ha tancat la sessio" >> $HOME/logout.log
+4.echo "Benvingut al shell"
+5.canviar tal cual desde el nano (dir_mode=0700 a dir_mode=0750)
+6.igual 5
+7.canviar el pass_warn_age ens canvia els dies en antelacio a que caduca que ens avisa
+canviar el pass_max_days canvia els dies maxims avans de tenir q canviar la pass
+i el minim lo mismo
+i si hi a algun parametre mes de este tipo pues canviar eso
 
 
 
