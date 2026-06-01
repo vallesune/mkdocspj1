@@ -194,79 +194,22 @@ Algunes comandes basiques per crear o modificar usaris son:
 
 
 ### Fitxers de Configuracio 
-jjj
-adduser i useradd utiltizen els fitxers de configuracio de /etc/skel al moment de crear un usuari, si modifiquem aquests fitxers podem fer que els usuaris que es creen despres tinguin aquesta configuracio per defecte, mes efectiu que tenir que modificar cada usuari despres de crearlo. Igualment si afegim algun fitxer o carpeta al skel es copiaran als nous usuaris sense tenir que indicarho a cap fitxer.
+
+AQUI PARRAFO ETC SKEL (o mezclr con el de abajo)
+
+Adduser i useradd utiltizen els fitxers de configuracio de /etc/skel al moment de crear un usuari, si modifiquem aquests fitxers podem fer que els usuaris que es creen despres tinguin aquesta configuracio per defecte, mes efectiu que tenir que modificar cada usuari despres de crearlo. Igualment si afegim algun fitxer o carpeta al skel es copiaran als nous usuaris sense tenir que indicarho a cap fitxer.
 
 En cas de que vulgem modificar la configuracio d'un usuari ja creat es creen els mateixos fitxers dins la carpeta home de cada usuari, per tan els podem modificar desde alli.
 
-Tambe podem modificar el que fan les comandes adduser i user add desde 
-/etc/adduser.conf
-/etc/default/useradd
+Tambe podem modificar el que fan les comandes adduser i user add desde "/etc/adduser.conf" i "/etc/default/useradd"
 
-fitx /etc/login.defs ??
-
-Los tres fitxeros de etc skel son
-explicar los bash i prof de skel
-bash_logout tanca sesio
-.bashrc interpret
-.profile inici sesio
+Per ultim tenim el fitxer login.defs que el que fa ... 
 
 
-Exemplos de canvios de config: ?
 
-Habilitar colores en el prompt
-export LS_COLORS='di=1;34:ln=36:so=35:pi=33:ex=32:bd=1;33:cd=1;33:su=37:sg=30:tw=30:ow=34'
-export EDITOR=nano
-export HISTSIZE=2000
-export HISTCONTROL=ignoredups:erasedups
 
-Cambiar el bash por defecto(en los add), el uid(en los add), el temps contraseña(en login)
 
-Para modificar els fitxers o contingut de la carpeta skel no podem ferho desde la terminal grafica, sino que hem d'utilitzar una tty nativa a la que podem entrar en Fn+Fx 
-
-Modificar alguna cosa de cada fitx (bashrc,logout i prof)
-al prf per exempe pdem fer que la home no es cree a /home si no a cualsevol altre dir (?) nosesiesaqui
-
-En useradd conf podemos hacer qe se automatize
-automatitzar useradd
-en los fitxers q faig falta
-primera vez q inicia gradficament  q te demano cambiar contra(posibilitat)
-antes caldria un passwor per defecte (com 123) per evitar interaccio
-q se cree la home i todo lo q haciamos manualmente
-config utiles para cuando se execute el comando
-
-practicas del sp pasado?
-equivale a los ex 29 y 30
-softlink hardlink
-ln (-s es soft sesne es hard)
-ln -s /tmp /etc/skel/enllas
-nano etc login.defs (conf login i contrasenyes)
-
-etc adduser.conf
-(bash cambiat sh)
-(home a /tmp)
-cambiat lo de primer uid no 1000 cambiat a 2000
-directori
-etc skel
-
-etc default useradd
-sh per bash
-
-etc profile
-alias pwd = /var
-
-esto es de lo q seria la act 31:
-els fitxers .bash i profile no es modifiquen en pseudoterminal(la de grafica) S’han de fer ter tty
-carpeta /etc/skel sense ocult no te res pero en ocult te els .prof i .bash que si es modifiquen aqui a partir del
-proxim user es crearan amb la conf d’aqui i aixi no s’a de modificar indiv
-si es crea algo a la carpeta skel (carpetes, archius lo q sea) es creara /copiara als nous users
-pwd para saver en q carpeta estas
-com que a la etc skel es per a tots els users se pot usar variables
-
-jjj
-
-modificaciones echas en skel bashrc bashlogout profile adduser useradd logindefs
-
+modificaciones echas en orden skel bashrc bashlogout profile adduser useradd logindefs:
 1. carpeta skel añadimos carpeta prova per que es cree junt en la resta de fitxers al crear l'user
 2.bashrc creem un alias per q el pugen usar los nous users
 3.bash_logout borrar el contingut d'una carpeta temporal i missatge de sortida i/o log de tancat sessio
@@ -274,7 +217,6 @@ modificaciones echas en skel bashrc bashlogout profile adduser useradd logindefs
 5.adduser modifiquem uid i canviar permisos per defecte de la carpeta creada home
 6.useradd modif shell per def (de sh a bash) i alguna cosa com el uid max min
 7.logins modif la caducitat de les contrasenyes
-
 
 2. alias ll='l -lah'
 3.rm -rf "$HOME/temporal" /*  echo "Adeu!" echo "$(date) - $USER ha tancat la sessio" >> $HOME/logout.log
