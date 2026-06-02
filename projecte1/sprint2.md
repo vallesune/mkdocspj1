@@ -450,7 +450,7 @@ Per automatitzar l'execucio diaria amb anacron copiarem l'script al directori /e
 
 ## 4. Quotes de disc i d'usuari
 
-A Ubuntu, les quotes de disc permeten limitar lespai demmagatzematge que pot utilitzar cada usuari o grup. Això ajuda a controlar lús del disc i evitar que un sol usuari ocupi tots els recursos disponibles del sistema.
+A Ubuntu, les quotes de disc permeten limitar lespai demmagatzematge que pot utilitzar cada usuari o grup. Això ajuda a controlar lús del disc i evitar que un sol usuari ocupi tots els recursos disponibles del sistema. Existeixen dos limits per un disc, el soft i el hard, el soft es un limit que podem superar durant un periode de gracia i el hard es el realment limit que no es pot superar.
 
 Per configurar quotes en un disc primer amb la mv tancada afegirem un disc
 
@@ -486,9 +486,7 @@ Crearem un user de prova
 
 <img width="505" height="332" alt="Captura de pantalla de 2026-06-01 16-43-28" src="https://github.com/user-attachments/assets/04e3fa2b-a071-4ebb-ba2c-2a26734e67e4" />
 
-Definim la quota soft i la hard (explicar diferencia?)
-
-En edquota -u li asignem les quotes al usuari (-u user1)(s'obri learxiu este)
+En edquota -u li asignem les quotes soft i hard al usuari
 
 <img width="590" height="87" alt="Captura de pantalla de 2026-06-01 16-55-59" src="https://github.com/user-attachments/assets/8337c2e7-025c-4737-96c8-18b627264303" />
 
