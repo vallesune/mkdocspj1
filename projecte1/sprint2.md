@@ -103,25 +103,25 @@ Algunes comandes basiques per crear o modificar usaris son:
 		
 		'adduser' per crear un usuari de manera automatica, unicament introduim el nom de l'usuari i la password al moment i ens crea la carpeta home i els permisos automaticament.
 
-		<img width="741" height="319" alt="Captura de pantalla de 2026-06-01 17-37-37" src="https://github.com/user-attachments/assets/f1c7cc16-2e89-453e-8f46-f4726c3e52ed" />
+<img width="741" height="319" alt="Captura de pantalla de 2026-06-01 17-37-37" src="https://github.com/user-attachments/assets/f1c7cc16-2e89-453e-8f46-f4726c3e52ed" />
 
 		`useradd` s'utilitza tambe per crear usuaris pero de manera manual, despres de crearlo hem de configurarli la contrasenya, la home i si volem tambe el shell ja que no ve en bash per defecte.
 
 		Primer creem l'usuari, li assignem una password i creem la carpeta home amb el mateix nom
 		
-		<img width="518" height="151" alt="Captura de pantalla de 2026-06-01 17-43-23" src="https://github.com/user-attachments/assets/94adb86b-bf13-419f-ae8d-34122a19578d" />
+<img width="518" height="151" alt="Captura de pantalla de 2026-06-01 17-43-23" src="https://github.com/user-attachments/assets/94adb86b-bf13-419f-ae8d-34122a19578d" />
 
 		Despres assegurem permisos fent propietari de la home al usuari
 		
-		<img width="523" height="138" alt="Captura de pantalla de 2026-06-01 17-43-36" src="https://github.com/user-attachments/assets/03ecb5b4-46b6-4c03-808d-d8c0acd30f7d" />
+<img width="523" height="138" alt="Captura de pantalla de 2026-06-01 17-43-36" src="https://github.com/user-attachments/assets/03ecb5b4-46b6-4c03-808d-d8c0acd30f7d" />
 
 		Per ultim com en useradd el shell que ve per defecte es sh podem canviarlo a bash
 		
-		<img width="573" height="108" alt="Captura de pantalla de 2026-06-01 18-07-57" src="https://github.com/user-attachments/assets/39dbc151-2fe6-48b3-9c71-3436d3bf6202" />
+<img width="573" height="108" alt="Captura de pantalla de 2026-06-01 18-07-57" src="https://github.com/user-attachments/assets/39dbc151-2fe6-48b3-9c71-3436d3bf6202" />
 
 		'addgroup' serveix per crear un grup. 
 
-		<img width="413" height="77" alt="Captura de pantalla de 2026-06-01 17-43-01" src="https://github.com/user-attachments/assets/30709e91-029b-4445-ac69-b99fd3176ef8" />
+<img width="413" height="77" alt="Captura de pantalla de 2026-06-01 17-43-01" src="https://github.com/user-attachments/assets/30709e91-029b-4445-ac69-b99fd3176ef8" />
 
 
 		> Modificar usuaris, grups o contraseñes:
@@ -130,14 +130,14 @@ Algunes comandes basiques per crear o modificar usaris son:
 
 		Per bloquejar utilitzem -L i per desbloquejar -U
 
-		<img width="515" height="102" alt="Captura de pantalla de 2026-06-01 17-46-12" src="https://github.com/user-attachments/assets/750d3874-a8e4-42eb-9edc-d40539c3598a" />
+<img width="515" height="102" alt="Captura de pantalla de 2026-06-01 17-46-12" src="https://github.com/user-attachments/assets/750d3874-a8e4-42eb-9edc-d40539c3598a" />
 
-		<img width="576" height="77" alt="Captura de pantalla de 2026-06-01 17-47-26" src="https://github.com/user-attachments/assets/4b62f046-8ff8-414f-8973-ff5f7cdde1b5" />
+<img width="576" height="77" alt="Captura de pantalla de 2026-06-01 17-47-26" src="https://github.com/user-attachments/assets/4b62f046-8ff8-414f-8973-ff5f7cdde1b5" />
 
 
 		'groupmod' permet modificar un grup, per exemple canviarli el nom
 
-		<img width="515" height="102" alt="Captura de pantalla de 2026-06-01 17-45-02" src="https://github.com/user-attachments/assets/0a2fe4e2-96c5-4724-a9be-e9d39cb9c4a2" />
+<img width="515" height="102" alt="Captura de pantalla de 2026-06-01 17-45-02" src="https://github.com/user-attachments/assets/0a2fe4e2-96c5-4724-a9be-e9d39cb9c4a2" />
 
 		'change' permet afegir una caducitat a les contrasenyes
 		
@@ -157,39 +157,40 @@ Algunes comandes basiques per crear o modificar usaris son:
 
 		'gpasswd -a usuari grup' (afegig user grup com secundari tipo apend) (-A hace al user admin de ese grupo)
 
-		<img width="487" height="53" alt="Captura de pantalla de 2026-06-01 17-47-55" src="https://github.com/user-attachments/assets/3b0683d8-d054-47a8-8d67-806457edd94a" />
+<img width="487" height="53" alt="Captura de pantalla de 2026-06-01 17-47-55" src="https://github.com/user-attachments/assets/3b0683d8-d054-47a8-8d67-806457edd94a" />
 
 		'usermod -a -G grup usuari' (-a lo mismo i la -G es para modif el grupo principal del user q de primeras es el q se crea auto igual q el nombre del usu)
+
 
 		> Modifiquem el nom d'usuari funcionalment:
 		
 		'usermod -l' (nounom anticnom) per canviar l'user
 
-		<img width="508" height="33" alt="Captura de pantalla de 2026-06-01 18-24-13" src="https://github.com/user-attachments/assets/2ed63e25-a535-4782-920d-66551011b2b4" />
+<img width="508" height="33" alt="Captura de pantalla de 2026-06-01 18-24-13" src="https://github.com/user-attachments/assets/2ed63e25-a535-4782-920d-66551011b2b4" />
 
 		canviar nom de carpeta home mv /home/ant ''/nou
 
-		<img width="431" height="110" alt="Captura de pantalla de 2026-06-01 18-24-36" src="https://github.com/user-attachments/assets/234fba68-dd4c-48ef-99c7-dffc53074595" />
+<img width="431" height="110" alt="Captura de pantalla de 2026-06-01 18-24-36" src="https://github.com/user-attachments/assets/234fba68-dd4c-48ef-99c7-dffc53074595" />
 
 		usermod -d /home/nou per a q la home del user sigui la nova 
 
-		<img width="546" height="32" alt="Captura de pantalla de 2026-06-01 18-25-37" src="https://github.com/user-attachments/assets/0c2955f5-9516-460e-bc1d-1c3018256120" />
+<img width="546" height="32" alt="Captura de pantalla de 2026-06-01 18-25-37" src="https://github.com/user-attachments/assets/0c2955f5-9516-460e-bc1d-1c3018256120" />
 
 		groupmod -n nounom anti canvia el nom del grup del user
 
-		<img width="492" height="30" alt="Captura de pantalla de 2026-06-01 18-27-58" src="https://github.com/user-attachments/assets/37131f4b-a93c-420b-9a39-120cb5317ffa" />
+<img width="492" height="30" alt="Captura de pantalla de 2026-06-01 18-27-58" src="https://github.com/user-attachments/assets/37131f4b-a93c-420b-9a39-120cb5317ffa" />
 
 		comprov rapid de id, cat passwd, group que estan correct 
 
-		<img width="903" height="267" alt="Captura de pantalla de 2026-06-01 18-28-07" src="https://github.com/user-attachments/assets/bcdcf62c-d1bd-4882-a480-6896a007f7f4" />
+<img width="903" height="267" alt="Captura de pantalla de 2026-06-01 18-28-07" src="https://github.com/user-attachments/assets/bcdcf62c-d1bd-4882-a480-6896a007f7f4" />
 
 		iniciar grafico con el user (deveria func)
 
-		<img width="360" height="263" alt="Captura de pantalla de 2026-06-01 18-29-16" src="https://github.com/user-attachments/assets/59d28481-d6f8-4a90-8189-920c876dc39e" />
+<img width="360" height="263" alt="Captura de pantalla de 2026-06-01 18-29-16" src="https://github.com/user-attachments/assets/59d28481-d6f8-4a90-8189-920c876dc39e" />
 
 		abrir term i poner whoaim para la cap
 
-		<img width="473" height="97" alt="Captura de pantalla de 2026-06-01 18-31-40" src="https://github.com/user-attachments/assets/bc0fcadb-874b-40d3-b96d-26b25bb2759d" />
+<img width="473" height="97" alt="Captura de pantalla de 2026-06-01 18-31-40" src="https://github.com/user-attachments/assets/bc0fcadb-874b-40d3-b96d-26b25bb2759d" />
 
 
 
@@ -218,21 +219,52 @@ Podem modificar algun petit parametre de cada fitxer i veure com afecta al final
 
 El primer que podem fer es afegir un directori a /etc/skel per veure com es copia a la home del user
 
-A bashrc podem crear un alias nou
-
-A bash_logout indicarem que es borri el contingut de la carpeta temporal, afegirem un misatge de tancat i registrarem en un log la data de cada cop que tanquem sessio.
-
-A profile podem crear un missatge de benvinguda
+<img width="426" height="73" alt="Captura de pantalla de 2026-06-01 21-56-48" src="https://github.com/user-attachments/assets/dee9c88a-8d3c-450d-8f30-ad24a9d7f18b" />
 
 A adduser modificarem la uid minima i canviarem els permisos de la carpeta home
+	
+	Cambiem la uid de 1000 a 1500
+
+<img width="248" height="145" alt="Captura de pantalla de 2026-06-01 21-58-19" src="https://github.com/user-attachments/assets/75e3819c-e81f-4f4f-98c4-bfbcae8dcf7c" />
+
+	Cambiem els permisos de la carpeta home de 750 a 755 (rwxr-xr-x)
+	
+<img width="162" height="72" alt="Captura de pantalla de 2026-06-01 21-58-57" src="https://github.com/user-attachments/assets/b14689a5-1051-482e-a1e8-e9eb2ca7e3d3" />
+
+	Cambiem on es creen per defecte les homes a /mnt
+	
+<img width="373" height="74" alt="Captura de pantalla de 2026-06-01 21-59-32" src="https://github.com/user-attachments/assets/92d890b6-0f4b-4b45-9157-98c61e7eaa91" />
 
 A useradd canviarem la shell per defecte a bash 
 
-Per ultim a logins.def modificarem la data de caducitat de les contrasenyes
+<img width="174" height="55" alt="Captura de pantalla de 2026-06-01 22-00-09" src="https://github.com/user-attachments/assets/634bfb40-7d78-4836-9cb0-2b0c5fb20ba2" />
 
-Per comprovar que els canvis funcionen primer crearem un nou usuari en useradd, al fitxer passwd podem comprovar que l'uid es correcte i que el directori de la home tambe, al fitxer shadow a mes podem comprovar la caducitat de la contrasenya 'usuari:$6$...:19800:0:90:7:30::' on 90 son els dies que tarda en caducar, 7 els dies en antelacio que avise i 30 els dies que tarda en deixar el user inactiu despres de que la contrasenya hagui caducat sense canviarse.
+A logins.def modificarem la data de caducitat de les contrasenyes a 31 dies i l'uid minim que tindran els users
+
+<img width="234" height="104" alt="Captura de pantalla de 2026-06-01 22-03-40" src="https://github.com/user-attachments/assets/8f174fda-5aa1-4897-83bb-3ad22eb6d3ba" />
+
+<img width="292" height="87" alt="Captura de pantalla de 2026-06-01 22-04-12" src="https://github.com/user-attachments/assets/e5fb4319-6f20-43e4-9645-64a2f3823134" />
+
+A bashrc podem crear un alias nou
+
+<img width="182" height="53" alt="Captura de pantalla de 2026-06-01 22-08-17" src="https://github.com/user-attachments/assets/07d437ec-58bb-41d4-b3a7-20e553fbbb7e" />
+
+A bash_logout indicarem que es borri el contingut de la carpeta temporal, afegirem un misatge de tancat i registrarem en un log la data de cada cop que tanquem sessio.
+
+<img width="597" height="286" alt="Captura de pantalla de 2026-06-01 22-07-25" src="https://github.com/user-attachments/assets/e62f38d5-57f6-42c4-be94-da42477fd25f" />
+
+Per ultim, profile podem crear un missatge de benvinguda
+
+<img width="256" height="56" alt="Captura de pantalla de 2026-06-01 22-09-13" src="https://github.com/user-attachments/assets/20c90b7c-0b57-4b3e-a31e-456ca0e69479" />
+
+
+Per comprovar que els canvis funcionen primer crearem un nou usuari en useradd, al fitxer passwd podem comprovar que l'uid es correcte i que el directori de la home tambe, al fitxer shadow a mes podem comprovar la caducitat de la contrasenya on el 31 son els dies que tarda en caducar i el 7 els dies en antelacio que avise.
+
+<img width="724" height="112" alt="Captura de pantalla de 2026-06-01 22-17-17" src="https://github.com/user-attachments/assets/bc71fbd6-711c-4862-a4a2-a0bc3c72c3fb" />
 
 Tambe podem comprovar que s'han copiat els fitxers del etc/skel, incluit el directori que em creat
+
+<img width="454" height="124" alt="Captura de pantalla de 2026-06-01 22-17-27" src="https://github.com/user-attachments/assets/02e29786-6187-4c65-b499-daa09a0cb648" />
 
 Si iniciem un bash en l'usuari podem crear la carpeta temporal i crear algun fitxer dins
 
@@ -241,17 +273,9 @@ Tanquem la sessio del bash i comprovem que el contingut s'ha borrat
 
 Despres podem crear un nou usuari pero en useradd i comprovar al passwd que igualment la id es correcta, que el bash tambe s'ha canviat i al shadow la caducitat de la contrasenya. 
 
+<img width="555" height="127" alt="Captura de pantalla de 2026-06-01 22-18-01" src="https://github.com/user-attachments/assets/4748a12d-19d2-4530-b612-5b01c5889c6f" />
 
-2. alias ll='l -lah'
-3.rm -rf "$HOME/temporal" /*  echo "Adeu!" echo "$(date) - $USER ha tancat la sessio" >> $HOME/logout.log
-4.echo "Benvingut al shell"
-5.canviar tal cual desde el nano (dir_mode=0700 a dir_mode=0750)
-6.igual 5
-7.canviar el pass_warn_age ens canvia els dies en antelacio a que caduca que ens avisa
-canviar el pass_max_days canvia els dies maxims avans de tenir q canviar la pass
-i el minim lo mismo
-i si hi a algun parametre mes de este tipo pues canviar eso
-
+<img width="728" height="115" alt="Captura de pantalla de 2026-06-01 22-18-28" src="https://github.com/user-attachments/assets/2f6596e6-7234-4102-a2b0-0e9d3843e928" />
 
 
 ### Gestio de permisos
