@@ -175,31 +175,31 @@ Algunes comandes basiques per crear o modificar usaris son:
 
 		> Modifiquem el nom d'usuari funcionalment:
 		
-		'usermod -l' (nounom anticnom) per canviar l'user
+		'usermod -l' per canviar el nom d'usuari
 
 <img width="508" height="33" alt="Captura de pantalla de 2026-06-01 18-24-13" src="https://github.com/user-attachments/assets/2ed63e25-a535-4782-920d-66551011b2b4" />
 
-		canviar nom de carpeta home mv /home/ant ''/nou
+		despres canviem el nom de la carpeta home
 
 <img width="431" height="110" alt="Captura de pantalla de 2026-06-01 18-24-36" src="https://github.com/user-attachments/assets/234fba68-dd4c-48ef-99c7-dffc53074595" />
 
-		usermod -d /home/nou per a q la home del user sigui la nova 
+		usermod -d per que la home del user sigui la nova 
 
 <img width="546" height="32" alt="Captura de pantalla de 2026-06-01 18-25-37" src="https://github.com/user-attachments/assets/0c2955f5-9516-460e-bc1d-1c3018256120" />
 
-		groupmod -n nounom anti canvia el nom del grup del user
+		groupmod -n per canviar el nom del grup del user
 
 <img width="492" height="30" alt="Captura de pantalla de 2026-06-01 18-27-58" src="https://github.com/user-attachments/assets/37131f4b-a93c-420b-9a39-120cb5317ffa" />
 
-		comprov rapid de id, cat passwd, group que estan correct 
+		Comprovem el "id user" i cat passwd/group que els canvis son correctes
 
 <img width="903" height="267" alt="Captura de pantalla de 2026-06-01 18-28-07" src="https://github.com/user-attachments/assets/bcdcf62c-d1bd-4882-a480-6896a007f7f4" />
 
-		iniciar grafico con el user (deveria func)
+		Provem d'iniciar graficament
 
 <img width="360" height="263" alt="Captura de pantalla de 2026-06-01 18-29-16" src="https://github.com/user-attachments/assets/59d28481-d6f8-4a90-8189-920c876dc39e" />
 
-		abrir term i poner whoaim para la cap
+		Podem veure que es correcte i funciona
 
 <img width="473" height="97" alt="Captura de pantalla de 2026-06-01 18-31-40" src="https://github.com/user-attachments/assets/bc0fcadb-874b-40d3-b96d-26b25bb2759d" />
 
