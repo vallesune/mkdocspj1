@@ -83,7 +83,9 @@ Un grup es un conjunt d'usuaris agrupats per que comparteixen permisos.
 La gestió d'usuaris i grups a Linux es basa principalment en quatre fitxers del sistema, ubicats a /etc, que emmagatzemen la informació essencial per identificar usuaris, assignar-los a grups i controlar l'accés al sistema.
 
 	/etc/passwd
-		Conté la informació bàsica de cada usuari: nom dusuari, UID, GID principal, directori home i shell. 		Les contrasenyes ja no es guarden aquí per seguretat.
+		Conté la informació bàsica de cada usuari: nom dusuari, UID, GID principal, directori home i shell. 		
+		
+		Les contrasenyes ja no es guarden aquí per seguretat.
 
 	/etc/shadow
 		Deseu les contrasenyes xifrades dels usuaris, juntament amb paràmetres com la caducitat, el temps mínim entre canvis i polítiques de seguretat de la contrasenya.
@@ -164,11 +166,11 @@ Algunes comandes basiques per crear o modificar usaris son:
 		
 <img width="454" height="86" alt="Captura de pantalla de 2026-06-02 08-24-06" src="https://github.com/user-attachments/assets/3b302495-b13b-4caf-9b66-b3c99332db98" />
 
-		'gpasswd -a usuari grup' (afegig user grup com secundari tipo apend) (-A hace al user admin de ese grupo)
+		'gpasswd -a usuari grup' afegeix l'usuari al grup de manera secundaria
 
 <img width="487" height="53" alt="Captura de pantalla de 2026-06-01 17-47-55" src="https://github.com/user-attachments/assets/3b0683d8-d054-47a8-8d67-806457edd94a" />
 
-		'usermod -a -G grup usuari' (-a lo mismo i la -G es para modif el grupo principal del user q de primeras es el q se crea auto igual q el nombre del usu)
+		'usermod -a -G grup usuari' La -G defineix que el nou grup sera el prinicipal del usuari
 
 <img width="508" height="64" alt="Captura de pantalla de 2026-06-02 08-25-33" src="https://github.com/user-attachments/assets/add53b57-4213-4c63-be0c-47aeba944db5" />
 
