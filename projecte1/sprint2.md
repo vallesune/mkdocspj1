@@ -195,28 +195,52 @@ Algunes comandes basiques per crear o modificar usaris son:
 
 ### Fitxers de Configuracio 
 
-AQUI PARRAFO ETC SKEL (o mezclr con el de abajo)
+A la carpeta etc/skel conte tres fitxers de configuracio d'usuari: bashrc, bash_logout i profile
 
-Adduser i useradd utiltizen els fitxers de configuracio de /etc/skel al moment de crear un usuari, si modifiquem aquests fitxers podem fer que els usuaris que es creen despres tinguin aquesta configuracio per defecte, mes efectiu que tenir que modificar cada usuari despres de crearlo. Igualment si afegim algun fitxer o carpeta al skel es copiaran als nous usuaris sense tenir que indicarho a cap fitxer.
+Bashrc serveix principalment per definir el contingut de la shell, com alies, variables d'entorn o personalitzacio
+
+Bash_logout s'executa cuan es tanca una sessio activa de shell 
+
+Profile definiex l'inici de sessio i podem definir variables d'entorn o procesos que s'han d'executar al iniciar
+
+Adduser i useradd copien el contigut d'/etc/skel al home d'un usuari nou, si modifiquem aquests fitxers podem fer que els usuaris que es creen despres tinguin aquesta configuracio per defecte, mes efectiu que tenir que modificar cada usuari despres de crearlo. Igualment si afegim algun fitxer o carpeta al skel es copiaran als nous usuaris sense tenir que indicarho a cap fitxer.
 
 En cas de que vulgem modificar la configuracio d'un usuari ja creat es creen els mateixos fitxers dins la carpeta home de cada usuari, per tan els podem modificar desde alli.
 
-Tambe podem modificar el que fan les comandes adduser i user add desde "/etc/adduser.conf" i "/etc/default/useradd"
+Tambe podem modificar el que fan les comandes adduser i user add desde "/etc/adduser.conf" i "/etc/default/useradd", pugent modificar coses com el directori de homes per defecte, les uids utilitzades, la shell que tindra l'user,etc. La diferencia principal entre adduser i useradd es que 'adduser' esta mes automatizada, et demana la password cuan crees l'usuari i crea la carpeta al home, mentre que en useradd tots aquests pasos s'han de fer manualment.
 
-Per ultim tenim el fitxer login.defs que el que fa ... 
-
-
+Per ultim tenim el fitxer login.defs que el que fa es definir principalment configuracions relacionades en la gestio d'usuaris, com els rangs d'uid que utilitzaran, els limits de temps de contrasenyes, entre altres. 
 
 
+Prova practica
 
-modificaciones echas en orden skel bashrc bashlogout profile adduser useradd logindefs:
-1. carpeta skel añadimos carpeta prova per que es cree junt en la resta de fitxers al crear l'user
-2.bashrc creem un alias per q el pugen usar los nous users
-3.bash_logout borrar el contingut d'una carpeta temporal i missatge de sortida i/o log de tancat sessio
-4.profile afegir missatge de benvinguda
-5.adduser modifiquem uid i canviar permisos per defecte de la carpeta creada home
-6.useradd modif shell per def (de sh a bash) i alguna cosa com el uid max min
-7.logins modif la caducitat de les contrasenyes
+Podem modificar algun petit parametre de cada fitxer i veure com afecta al final en la creacio de nous usuaris
+
+El primer que podem fer es afegir un directori a /etc/skel per veure com es copia a la home del user
+
+A bashrc podem crear un alias nou
+
+A bash_logout indicarem que es borri el contingut de la carpeta temporal, afegirem un misatge de tancat i registrarem en un log la data de cada cop que tanquem sessio.
+
+A profile podem crear un missatge de benvinguda
+
+A adduser modificarem la uid minima i canviarem els permisos de la carpeta home
+
+A useradd canviarem la shell per defecte a bash 
+
+Per ultim a logins.def modificarem la data de caducitat de les contrasenyes
+
+Per comprovar que els canvis funcionen primer crearem un nou usuari en useradd, al fitxer passwd podem comprovar que l'uid es correcte i que el directori de la home tambe, al fitxer shadow a mes podem comprovar la caducitat de la contrasenya 'usuari:$6$...:19800:0:90:7:30::' on 90 son els dies que tarda en caducar, 7 els dies en antelacio que avise i 30 els dies que tarda en deixar el user inactiu despres de que la contrasenya hagui caducat sense canviarse.
+
+Tambe podem comprovar que s'han copiat els fitxers del etc/skel, incluit el directori que em creat
+
+Si iniciem un bash en l'usuari podem crear la carpeta temporal i crear algun fitxer dins
+
+Tanquem la sessio del bash i comprovem que el contingut s'ha borrat
+
+
+Despres podem crear un nou usuari pero en useradd i comprovar al passwd que igualment la id es correcta, que el bash tambe s'ha canviat i al shadow la caducitat de la contrasenya. 
+
 
 2. alias ll='l -lah'
 3.rm -rf "$HOME/temporal" /*  echo "Adeu!" echo "$(date) - $USER ha tancat la sessio" >> $HOME/logout.log
