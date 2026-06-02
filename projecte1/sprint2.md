@@ -279,77 +279,9 @@ Despres podem crear un nou usuari pero en useradd i comprovar al passwd que igua
 
 
 ### Gestio de permisos
-ultimo dia hicimos permisos (777,rw,stiky…) hacer lo mismo q el año pasado
+A Ubuntu, els permisos són un mecanisme de seguretat que determina quins usuaris poden llegir, modificar o executar fitxers i directoris. Cada fitxer o directori té un propietari, un grup associat i un conjunt de permisos que controlen les accions que es poden realitzar sobre ell.
 
-cosas de permisos q entran
-ugo
-especials
-acl
-mascara
-
-permisos normals
-permisos especials
-llistes control access(acl)
-umask
-
-perm nomals
-(en un ls -l)
-3 primeres lletres sosn del user(propietari)(menos la q es realment primera q indica el tipus d per directori - per fitxer …)
-los 3 despues son los q formen part del grup
-i los ulktims tres son per nose los q no formen del grup ni son propiet (invitats, altres)
-lo grup q apareix es sempre el principal del user propietari
-chgrp per el grup
-chmod per permisos
-chown per propietari
-r read w write x executar
-
-permisos especials
-sticky(util per 
-suid(util per a scripts )
-sgid(no utilitat segons profe)
-
-s(suid)   z(guid)    t(stiky)
-
-chmod 1(777) carpeta
-777 representa los permisos q pondrias a esa carp archivo lo q sea q pueden ser 777 o lo q sea i el uno delante es para activar el sticky
-
-
-apunts acl
-getfacl carp/
-dona un resumdls permisos
-ls -l en un + indica acl defini
-
-setfacl -m(-m per a idicar despues si es user o grup) user:nomuser:permisos a donar carp/ (captures en exemple)
-setfacl -b carp/ (elimina les acl de la carp indicada)(totes de tots los users i tal)
-setfacl -x user carp/ (elimina unicament les acl de un user)
-
-apunts umask
-sudo nano /etc/login.defs (umask)
-
-directori->777 (111 111 111)
-arxiu -> 666 (110 110 110)
-
-/etc/login.devs -> umask 0022 = root
-umask (num) - canvia la mascara temporalment(si reinicies se perd)
-
-comenta utilitat mascara 
-
-prova practica
-per a les proves hem creat los de blau verd roig i groc el grup parchis i inicialment ara tenim los blau i verd al grup parchis pero lo groc i roig nop
-
-pr al ub24 ha cambiat en lo 22 i per a coses de chown i noseq sobre un grup 
-per a utilitzar chgrp i ficar un grup del q el user no forma part (parchis / groc) no se si sea por eso o q en general pero para eso necesita sudo si no no deja
-
-per a un ch-loqsea de un directori fiquem -R per q s’aplico a tot lo d dins
-
-
-CHATGPT TEORIA
-
-Permisos en Ubuntu: fitxers i directoris
-
-En Ubuntu (i en general en sistemes GNU/Linux), els permisos són un mecanisme de seguretat que determina quins usuaris poden llegir, modificar o executar fitxers i directoris. Cada fitxer o directori té un propietari, un grup associat i un conjunt de permisos que controlen les accions que es poden realitzar sobre ell. Aquest model permet protegir la informació i gestionar l'accés als recursos del sistema.
-
-UGO (user,group,other)
+**UGO (user,group,other)**
 Els permisos tradicionals es basen en tres categories d'usuaris:
 
 User (u): propietari del fitxer o directori.
@@ -362,162 +294,89 @@ r (read): lectura.
 w (write): escriptura.
 x (execute): execució.
 
-Per exemple, si executem:
+Per exemple, si executem "ls -l proves/" obtenim les tres primeres lletres son del propietari, les tres seguents del grup propietari, i els tres ultims de la resta en este cas l'usari propietari pot llegir,escriur i executar i el grup propietar i la resta poden llegir i executar (pero no escriure)
 
-ls -l proves/
-
-Obtenim (sense contar que el primer valor que pot ser un - o una d indicant fitx o directori)
-obtenim les tres primeres lletres son del propietari, les tres seguents del grup propietari, i els tres ultims de la resta
-(explicar lo q haya salido en ese caso)
+<img width="513" height="273" alt="Captura de pantalla de 2026-06-01 22-35-09" src="https://github.com/user-attachments/assets/547859e7-43a0-4029-bb3b-8110f481f81e" />
 
 
-Permisos especials
+**Permisos especials**
 
-A més dels permisos tradicionals, Linux disposa de tres permisos especials.
+A més dels permisos tradicionals, ubuntu disposa de tres permisos especials.
 
-SUID (Set User ID)
+	SUID (Set User ID)
 
 Quan un executable té aquest bit activat, s'executa amb els privilegis del propietari del fitxer.
 
-Exemple:
+Podem comprovar que el programa passwd te el bit activat i per tant una "s" esta sustituint la "x" del usuari
 
-ls -l /usr/bin/passwd
+<img width="547" height="52" alt="Captura de pantalla de 2026-06-01 23-33-05" src="https://github.com/user-attachments/assets/2ae792de-4f4e-4329-87d4-e13fab3ecfde" />
 
-Pot mostrar:
--rwsr-xr-x
-
-La s substitueix la x del propietari.
-
-El programa passwd necessita privilegis elevats per modificar /etc/shadow.
-
-Per activar-lo:
-
-chmod u+s programa
+Per assignar esta flag a cualsevol programa utilitzem "chmod u+s programa"
 
 
-SGID (Set Group ID)
+	SGID (Set Group ID)
 
 En fitxers executables, el programa s'executa amb el grup propietari.
 
 En directoris, els fitxers nous hereten el grup del directori.
 
-Exemple:
+Podem donarli aquest permis a proves en "chmod g+s proves" i veure com apareix la "s" al grup
 
-chmod g+s projecte
-
-Visualització:
-
-drwxrwsr-x
-
-És molt útil en directoris compartits entre membres d'un mateix grup.
+<img width="516" height="239" alt="Captura de pantalla de 2026-06-01 23-34-31" src="https://github.com/user-attachments/assets/5127486c-9ca1-4355-8fd8-87bad2d807f9" />
 
 
-Sticky Bit
+
+	Sticky Bit
 
 S'utilitza principalment en directoris compartits.
 
 Permet que només el propietari d'un fitxer (o root) pugui esborrar-lo, encara que altres usuaris tinguin permisos d'escriptura sobre el directori.
 
-Exemple clàssic:
+Comprovem que /tmp te aquest permis indicat en una "t"
 
-ls -ld /tmp
+<img width="458" height="64" alt="Captura de pantalla de 2026-06-01 23-35-00" src="https://github.com/user-attachments/assets/92fd076e-4a83-4898-80f1-6b0cf5d829c1" />
 
-Resultat:
-
-drwxrwxrwt
-
-La t final indica el Sticky Bit.
-
-Per activar-lo:
-
-chmod +t directori
+Per assignarlo utilitzem +t al chmod
 
 
-ACL (Access Control Lists)
+**ACL (Access Control Lists)**
 
-Les ACL permeten definir permisos més detallats que el model UGO tradicional.
+Les ACL permeten definir permisos més detallats que el model UGO tradicional, per exemple, podem voler donar permisos a un usuari concret sense canviar el propietari ni el grup.
 
-Per exemple, podem voler donar permisos a un usuari concret sense canviar el propietari ni el grup.
+Per veure les ACL d'un directori usem "getfacl proves/"
 
-Veure ACL
-getfacl projecte
+<img width="504" height="143" alt="Captura de pantalla de 2026-06-01 22-36-36" src="https://github.com/user-attachments/assets/88eed98f-3f46-435b-ba51-ab6ae5a53013" />
 
-Exemple:
 
-user::rwx
-user:anna:rwx
-group::r-x
-other::---
+> Configurar ACL
 
-Això indica que l'usuari anna té permisos complets encara que no sigui propietària.
+Donar permisos complets a l'usuari user1:
 
-Configurar ACL
-
-Donar permisos complets a l'usuari anna:
-
-setfacl -m u:anna:rwx projecte
+setfacl -m u:user:rwx prova
 
 Donar permisos de lectura a un grup:
 
-setfacl -m g:professors:r-- fitxer.txt
+setfacl -m g:asix2:r-- fitxer.txt
 
 Eliminar una ACL:
 
-setfacl -x u:anna projecte
-
-
-ACL per defecte
-
-També es poden definir ACL heretades per als fitxers nous creats dins d'un directori.
-
-Exemple:
-
-setfacl -d -m u:anna:rwx projecte
-
-A partir d'aquest moment, els fitxers nous creats a projecte heretaran aquests permisos.
-
-
-Podem consultar les acl d'un directori en "getfacl"
-
-
-Umask
-
-La umask és una màscara que determina quins permisos es retiren per defecte quan es creen fitxers o directoris nous.
-
-Valors inicials teòrics:
-
-Fitxers: 666 (rw-rw-rw-)
-Directoris: 777 (rwxrwxrwx)
-
-La umask resta permisos d'aquests valors
-
-Consultar la umask
-umask
-
-Exemple:
-
-0022
-
-Càlcul
-
-Per a fitxers:
-
-666 - 022 = 644
-rw-r--r--
-
-Per a directoris:
-
-777 - 022 = 755
-rwxr-xr-x
-
-
-Resum
-
-El sistema de permisos de Linux combina diversos mecanismes. Els permisos UGO proporcionen el control bàsic sobre propietari, grup i altres usuaris. Els permisos especials (SUID, SGID i Sticky Bit) afegeixen funcionalitats avançades relacionades amb l'execució de programes i els directoris compartits. Les ACL permeten definir permisos específics per a usuaris o grups concrets més enllà del model tradicional. Finalment, la umask controla els permisos inicials dels fitxers i directoris nous. La combinació d'aquests mecanismes proporciona una gestió flexible i segura dels accessos en Ubuntu.
+<img width="595" height="222" alt="Captura de pantalla de 2026-06-01 23-37-25" src="https://github.com/user-attachments/assets/5405a42e-727b-48a6-80a7-0458e24c73e2" />
 
 
 
+> ACL per defecte
 
+També es poden definir ACL heredades per als fitxers nous creats dins d'un directori.
+
+<img width="651" height="307" alt="Captura de pantalla de 2026-06-01 23-38-20" src="https://github.com/user-attachments/assets/cc4ace2e-86ef-4b11-baca-0f5339b843b4" />
+
+
+
+**Umask**
+
+La umask és una màscara que determina quins permisos es retiren per defecte quan es creen fitxers o directoris nous. Inicialment a ubuntu els fitxers tenen de mascara 666 i els directoris 777 i la umask per defecte es 022 per tant si restem la umask obtenim que els permisos reals dels fitxers seran 644(rw-r--r--) i dels directoris 755(rwxr-xr-x)
+
+La umask es pot consultar desde terminal en "umask" i es pot modificar a bashrc
 
 
 ## 3. Copies de seguretat
