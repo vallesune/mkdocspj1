@@ -146,20 +146,31 @@ Algunes comandes basiques per crear o modificar usaris son:
 
 		'userdel'
 
+<img width="515" height="92" alt="Captura de pantalla de 2026-06-02 08-20-06" src="https://github.com/user-attachments/assets/a999e26c-7378-4ecd-81f4-0b7b932bf994" />
+
 		'deluser'
 
+<img width="486" height="102" alt="Captura de pantalla de 2026-06-02 08-21-03" src="https://github.com/user-attachments/assets/d7cb8e6c-1f4d-4c25-88e7-10d1cdab57eb" />
+
 		'groupdel'
+
+<img width="491" height="59" alt="Captura de pantalla de 2026-06-02 08-21-45" src="https://github.com/user-attachments/assets/f769fa7b-b321-4316-972f-1b30c246d09f" />
+
 
 
 		> Afegir un usuari a un grup:
 
 		'adduser usuari grup'
+		
+<img width="454" height="86" alt="Captura de pantalla de 2026-06-02 08-24-06" src="https://github.com/user-attachments/assets/3b302495-b13b-4caf-9b66-b3c99332db98" />
 
 		'gpasswd -a usuari grup' (afegig user grup com secundari tipo apend) (-A hace al user admin de ese grupo)
 
 <img width="487" height="53" alt="Captura de pantalla de 2026-06-01 17-47-55" src="https://github.com/user-attachments/assets/3b0683d8-d054-47a8-8d67-806457edd94a" />
 
 		'usermod -a -G grup usuari' (-a lo mismo i la -G es para modif el grupo principal del user q de primeras es el q se crea auto igual q el nombre del usu)
+
+<img width="508" height="64" alt="Captura de pantalla de 2026-06-02 08-25-33" src="https://github.com/user-attachments/assets/add53b57-4213-4c63-be0c-47aeba944db5" />
 
 
 		> Modifiquem el nom d'usuari funcionalment:
@@ -266,9 +277,6 @@ Tambe podem comprovar que s'han copiat els fitxers del etc/skel, incluit el dire
 
 <img width="454" height="124" alt="Captura de pantalla de 2026-06-01 22-17-27" src="https://github.com/user-attachments/assets/02e29786-6187-4c65-b499-daa09a0cb648" />
 
-Si iniciem un bash en l'usuari podem crear la carpeta temporal i crear algun fitxer dins
-
-Tanquem la sessio del bash i comprovem que el contingut s'ha borrat
 
 
 Despres podem crear un nou usuari pero en useradd i comprovar al passwd que igualment la id es correcta, que el bash tambe s'ha canviat i al shadow la caducitat de la contrasenya. 
@@ -352,11 +360,11 @@ Per veure les ACL d'un directori usem "getfacl proves/"
 
 Donar permisos complets a l'usuari user1:
 
-setfacl -m u:user:rwx prova
+<img width="626" height="33" alt="Captura de pantalla de 2026-06-02 08-28-14" src="https://github.com/user-attachments/assets/f7417000-290f-4061-ba1b-3a30c59d4ae6" />
 
 Donar permisos de lectura a un grup:
 
-setfacl -m g:asix2:r-- fitxer.txt
+<img width="629" height="30" alt="Captura de pantalla de 2026-06-02 08-28-20" src="https://github.com/user-attachments/assets/8156dba6-dd50-423d-b8cd-4c380a537495" />
 
 Eliminar una ACL:
 
@@ -433,10 +441,7 @@ Primer creem un petit script indicant el bash, un timestamp de la data actual i 
 
 Si volem que l'script s'executi en un moment concret utilitzant crontab editem /etc/crontab i indiquem com es veu el minut i la hora, l'usuari que executa i la comanda que sera l'execucio de l'script
 
-CAMBIARCAP
-
-<img width="991" height="422" alt="Captura de pantalla de 2025-12-18 09-54-03" src="https://github.com/user-attachments/assets/908802b0-ce38-4e3a-abca-4a0d4f6d5183" />
-
+<img width="722" height="382" alt="Captura de pantalla de 2026-06-02 08-18-42" src="https://github.com/user-attachments/assets/4c31a5f1-e3c3-4a26-a325-b4ecb3edcd3f" />
 
 Per automatitzar l'execucio diaria amb anacron copiarem l'script al directori /etc/cron.dialy sense l'extensio .sh i modificarem l'arxiu /etc/anacrontab per a que els cron diaris s'executin un minut despres d'enjegar la maquina
 
